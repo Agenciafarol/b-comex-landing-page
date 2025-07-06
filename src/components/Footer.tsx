@@ -49,15 +49,9 @@ const Footer = () => {
           
           {/* Compliance badges */}
           <div className="mb-12 flex justify-center space-x-8">
-            <div className="bg-slate-800 px-4 py-2 rounded-lg border border-slate-700">
-              <span className="text-slate-400 text-sm font-opensans">ISO 9001</span>
-            </div>
-            <div className="bg-slate-800 px-4 py-2 rounded-lg border border-slate-700">
-              <span className="text-slate-400 text-sm font-opensans">Compliance</span>
-            </div>
-            <div className="bg-slate-800 px-4 py-2 rounded-lg border border-slate-700">
-              <span className="text-slate-400 text-sm font-opensans">25+ Anos</span>
-            </div>
+            
+            
+            
           </div>
           
           <div className="border-t border-slate-700 pt-8">
