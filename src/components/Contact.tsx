@@ -81,9 +81,7 @@ const Contact = () => {
               </div>
               
               <div className="bg-gradient-to-r from-orange-50 to-orange-100 p-8 rounded-2xl border-2 border-orange-200 shadow-lg">
-                <h4 className="font-montserrat font-bold text-slate-900 mb-3 text-lg">
-                  🚀 Resposta rápida garantida
-                </h4>
+                <h4 className="font-montserrat font-bold text-slate-900 mb-3 text-lg">Resposta rápida garantida</h4>
                 <p className="text-slate-700 font-opensans leading-relaxed">Nossa equipe responde todas as mensagens em até x horas úteis. Sua expansão internacional não pode esperar!</p>
               </div>
             </div>
