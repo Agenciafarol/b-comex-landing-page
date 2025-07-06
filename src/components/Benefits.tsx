@@ -1,37 +1,28 @@
-
 import React from 'react';
 import { Zap, MessageCircle, Target, Shield } from 'lucide-react';
-
 const Benefits = () => {
-  const benefits = [
-    {
-      title: "Agilidade e Economia Real",
-      description: "Processos otimizados que reduzem custos e tempo",
-      icon: <Zap className="w-8 h-8" />,
-      color: "from-yellow-500 to-orange-500"
-    },
-    {
-      title: "Atendimento Direto e Transparente",
-      description: "Comunicação clara em todas as etapas",
-      icon: <MessageCircle className="w-8 h-8" />,
-      color: "from-blue-500 to-indigo-500"
-    },
-    {
-      title: "Estratégia Sob Medida",
-      description: "Soluções personalizadas para seu negócio",
-      icon: <Target className="w-8 h-8" />,
-      color: "from-green-500 to-emerald-500"
-    },
-    {
-      title: "Segurança Jurídica e Operacional",
-      description: "Total conformidade legal e redução de riscos",
-      icon: <Shield className="w-8 h-8" />,
-      color: "from-purple-500 to-violet-500"
-    }
-  ];
-
-  return (
-    <section className="py-20 md:py-32 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
+  const benefits = [{
+    title: "Agilidade e Economia Real",
+    description: "Processos otimizados que reduzem custos e tempo",
+    icon: <Zap className="w-8 h-8" />,
+    color: "from-yellow-500 to-orange-500"
+  }, {
+    title: "Atendimento Direto e Transparente",
+    description: "Comunicação clara em todas as etapas",
+    icon: <MessageCircle className="w-8 h-8" />,
+    color: "from-blue-500 to-indigo-500"
+  }, {
+    title: "Estratégia Sob Medida",
+    description: "Soluções personalizadas para seu negócio",
+    icon: <Target className="w-8 h-8" />,
+    color: "from-green-500 to-emerald-500"
+  }, {
+    title: "Segurança Jurídica e Operacional",
+    description: "Total conformidade legal e redução de riscos",
+    icon: <Shield className="w-8 h-8" />,
+    color: "from-purple-500 to-violet-500"
+  }];
+  return <section className="py-20 md:py-32 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
       {/* Modern background elements */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl"></div>
@@ -47,7 +38,7 @@ const Benefits = () => {
             <span className="w-2 h-2 bg-orange-400 rounded-full mr-2 animate-pulse"></span>
             Por que nos escolher
           </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+          <h2 className="text-4xl md:text-6xl text-white mb-6 leading-tight font-extrabold lg:text-5xl">
             Por que escolher a{' '}
             <span className="text-transparent bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text">
               2B COMEX?
@@ -56,12 +47,9 @@ const Benefits = () => {
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {benefits.map((benefit, index) => (
-            <div 
-              key={index} 
-              className="group text-center text-white hover:-translate-y-4 scroll-animate transition-all duration-500"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
+          {benefits.map((benefit, index) => <div key={index} className="group text-center text-white hover:-translate-y-4 scroll-animate transition-all duration-500" style={{
+          animationDelay: `${index * 0.1}s`
+        }}>
               <div className="relative mb-8">
                 <div className={`w-20 h-20 bg-gradient-to-br ${benefit.color} rounded-2xl flex items-center justify-center mx-auto shadow-2xl group-hover:shadow-orange-500/25 group-hover:scale-110 transition-all duration-300`}>
                   {benefit.icon}
@@ -78,12 +66,9 @@ const Benefits = () => {
               </p>
               
               <div className={`mt-6 h-px w-16 bg-gradient-to-r ${benefit.color} mx-auto rounded-full opacity-60 group-hover:opacity-100 group-hover:w-24 transition-all duration-300`}></div>
-            </div>
-          ))}
+            </div>)}
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Benefits;
