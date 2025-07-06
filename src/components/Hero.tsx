@@ -1,116 +1,118 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import { ArrowRight, Play } from 'lucide-react';
 
 const Hero = () => {
-  const handleCTAClick = () => {
+  const scrollToContact = () => {
     const contactSection = document.getElementById('contact');
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Video Background */}
-      <div className="absolute inset-0">
-        <video 
-          autoPlay 
-          muted 
-          loop 
-          playsInline
-          className="w-full h-full object-cover"
-          poster="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=1920&h=1080&fit=crop"
-        >
-          <source src="https://player.vimeo.com/external/434045526.sd.mp4?s=c27eecc69a27dbc4ff2b87d38afc35f1a9e7c02d&profile_id=164&oauth2_token_id=57447761" type="video/mp4" />
-        </video>
-        {/* Fallback background image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=1920&h=1080&fit=crop')",
-          }}
-        />
-        {/* Cinematic overlay */}
-        <div className="absolute inset-0 video-overlay"></div>
-      </div>
-      
-      {/* Animated particles */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-orange-500/30 rounded-full animate-float"></div>
-        <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-white/20 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute bottom-1/4 left-1/3 w-1.5 h-1.5 bg-orange-500/20 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
-      </div>
-      
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
-        {/* Text Content */}
-        <div className="text-white animate-fade-in">
-          <div className="mb-8 animate-slide-in-left">
-            <span className="inline-flex items-center bg-orange-500/20 text-orange-400 px-6 py-3 rounded-full text-sm font-medium border border-orange-500/30 backdrop-blur-sm">
-              ✨ 25+ anos de experiência internacional
-            </span>
-          </div>
-          
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-montserrat font-bold mb-6 leading-tight animate-slide-in-right" style={{ animationDelay: '0.3s' }}>
-            Expanda sua empresa para o mundo com{' '}
-            <span className="text-orange-500 gradient-text">segurança e estratégia</span>
-          </h1>
-          
-          <p className="text-xl md:text-2xl mb-10 text-slate-300 leading-relaxed font-opensans animate-fade-up" style={{ animationDelay: '0.6s' }}>
-            A 2B COMEX é referência em comércio exterior há mais de 25 anos, 
-            conectando empresas a oportunidades globais com eficiência, agilidade e conformidade.
-          </p>
-          
-          <div className="animate-scale-in" style={{ animationDelay: '0.9s' }}>
-            <Button 
-              onClick={handleCTAClick}
-              size="lg" 
-              className="bg-orange-500 hover:bg-orange-600 text-white px-10 py-5 text-xl font-montserrat font-semibold transition-all duration-300 hover:scale-105 shadow-2xl hover:shadow-3xl"
-            >
-              Falar com um especialista
-            </Button>
-          </div>
-        </div>
+  const scrollToServices = () => {
+    const servicesSection = document.getElementById('services');
+    if (servicesSection) {
+      servicesSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
-        {/* Image Content */}
-        <div className="relative animate-slide-in-right" style={{ animationDelay: '0.5s' }}>
-          <div className="relative">
-            {/* Decorative elements */}
-            <div className="absolute -inset-4 bg-gradient-to-r from-orange-500/20 to-slate-900/20 rounded-2xl blur-xl"></div>
-            
-            {/* Main image */}
+  return (
+    <section className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden">
+      {/* Navigation with Logo */}
+      <nav className="relative z-20 p-6">
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
+          <div className="flex items-center">
             <img 
-              src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=500&fit=crop" 
-              alt="Comércio Internacional - Importação e Exportação"
-              className="relative rounded-2xl shadow-2xl w-full h-[500px] object-cover border-4 border-white/10"
+              src="/lovable-uploads/1ca0dc9c-48b1-4065-85f1-843ece309d19.png" 
+              alt="2B COMEX Logo" 
+              className="h-12 w-auto bg-white rounded-lg px-2 py-1"
             />
-            
-            {/* Overlay gradient */}
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent rounded-2xl"></div>
-            
-            {/* Floating badges */}
-            <div className="absolute -bottom-6 -left-6 bg-orange-500 text-white p-4 rounded-xl shadow-xl">
-              <div className="text-center">
-                <div className="text-2xl font-montserrat font-bold">Import</div>
-                <div className="text-sm font-opensans">Export</div>
-              </div>
-            </div>
-            
-            <div className="absolute -top-6 -right-6 bg-slate-900 text-white p-4 rounded-xl shadow-xl border border-orange-500/30">
-              <div className="text-center">
-                <div className="text-2xl font-montserrat font-bold text-orange-500">25+</div>
-                <div className="text-sm font-opensans">Anos</div>
-              </div>
-            </div>
+          </div>
+          <div className="hidden md:flex space-x-8">
+            <button 
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="nav-link text-white font-opensans font-medium hover:text-orange-500 transition-colors"
+            >
+              Início
+            </button>
+            <button 
+              onClick={scrollToServices}
+              className="nav-link text-white font-opensans font-medium hover:text-orange-500 transition-colors"
+            >
+              Serviços
+            </button>
+            <button 
+              onClick={scrollToContact}
+              className="nav-link text-white font-opensans font-medium hover:text-orange-500 transition-colors"
+            >
+              Contato
+            </button>
           </div>
         </div>
+      </nav>
+
+      {/* Background decoration */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-20 left-20 w-64 h-64 border border-orange-500 rounded-full animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-48 h-48 border border-white rounded-full animate-float"></div>
+        <div className="absolute top-1/2 left-1/4 w-32 h-32 border border-orange-500 rounded-full"></div>
       </div>
       
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-white/60 rounded-full mt-2 animate-pulse"></div>
+      <div className="max-w-7xl mx-auto px-6 pt-20 pb-32 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="space-y-8 scroll-animate">
+            <h1 className="text-5xl md:text-7xl font-montserrat font-bold leading-tight">
+              Expanda sua empresa para o{' '}
+              <span className="gradient-text">mundo</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-slate-300 font-opensans leading-relaxed">
+              25+ anos conectando empresas brasileiras a oportunidades globais com estratégia, segurança e resultados comprovados.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button 
+                onClick={scrollToContact}
+                size="lg" 
+                className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 hover-lift flex items-center gap-3"
+              >
+                Falar com especialista
+                <ArrowRight className="w-5 h-5" />
+              </Button>
+              <Button 
+                onClick={scrollToServices}
+                variant="outline" 
+                size="lg"
+                className="border-2 border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 text-lg font-semibold transition-all duration-300 hover-lift flex items-center gap-3"
+              >
+                <Play className="w-5 h-5" />
+                Conhecer serviços
+              </Button>
+            </div>
+          </div>
+          
+          <div className="relative scroll-animate" style={{ animationDelay: '0.2s' }}>
+            <div className="relative z-10">
+              <div className="bg-gradient-to-br from-orange-500/20 to-transparent p-8 rounded-3xl backdrop-blur-sm border border-orange-500/30">
+                <div className="space-y-6">
+                  <div className="flex items-center gap-4 p-4 bg-white/10 rounded-2xl backdrop-blur-sm">
+                    <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                    <span className="text-sm font-opensans">25+ anos de experiência</span>
+                  </div>
+                  <div className="flex items-center gap-4 p-4 bg-white/10 rounded-2xl backdrop-blur-sm">
+                    <div className="w-3 h-3 bg-blue-400 rounded-full animate-pulse"></div>
+                    <span className="text-sm font-opensans">+500 empresas atendidas</span>
+                  </div>
+                  <div className="flex items-center gap-4 p-4 bg-white/10 rounded-2xl backdrop-blur-sm">
+                    <div className="w-3 h-3 bg-orange-400 rounded-full animate-pulse"></div>
+                    <span className="text-sm font-opensans">Presença em 40+ países</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="absolute -top-4 -right-4 w-24 h-24 bg-orange-500/20 rounded-full blur-xl"></div>
+            <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-blue-500/20 rounded-full blur-xl"></div>
+          </div>
         </div>
       </div>
     </section>
