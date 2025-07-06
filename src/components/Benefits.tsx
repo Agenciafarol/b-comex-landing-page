@@ -1,5 +1,6 @@
 import React from 'react';
 import { Zap, MessageCircle, Target, Shield } from 'lucide-react';
+
 const Benefits = () => {
   const benefits = [{
     title: "Agilidade e Economia Real",
@@ -7,7 +8,7 @@ const Benefits = () => {
     icon: <Zap className="w-8 h-8" />,
     color: "from-yellow-500 to-orange-500"
   }, {
-    title: "Atendimento Direto e Transparente",
+    title: "Atendimento Direto e Transparente", 
     description: "Comunicação clara em todas as etapas",
     icon: <MessageCircle className="w-8 h-8" />,
     color: "from-blue-500 to-indigo-500"
@@ -22,11 +23,25 @@ const Benefits = () => {
     icon: <Shield className="w-8 h-8" />,
     color: "from-purple-500 to-violet-500"
   }];
-  return <section className="py-20 md:py-32 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
-      {/* Modern background elements */}
+
+  return (
+    <section className="py-20 md:py-32 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
+      {/* Animated background elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl animate-pulse-grow"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-pulse-grow" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-purple-500/10 rounded-full blur-2xl animate-pulse-grow" style={{ animationDelay: '2s' }}></div>
+        
+        {/* Floating particles */}
+        <div className="absolute top-20 left-20 w-2 h-2 bg-orange-400/30 rounded-full animate-float" style={{ animationDelay: '0s' }}></div>
+        <div className="absolute top-40 right-32 w-1 h-1 bg-blue-400/30 rounded-full animate-float" style={{ animationDelay: '1.5s' }}></div>
+        <div className="absolute bottom-32 left-32 w-3 h-3 bg-purple-400/20 rounded-full animate-float" style={{ animationDelay: '3s' }}></div>
+        <div className="absolute top-60 left-3/4 w-1.5 h-1.5 bg-orange-300/40 rounded-full animate-float" style={{ animationDelay: '2.5s' }}></div>
+        <div className="absolute bottom-20 right-20 w-2 h-2 bg-blue-300/30 rounded-full animate-float" style={{ animationDelay: '4s' }}></div>
+        <div className="absolute top-1/3 right-1/4 w-1 h-1 bg-green-400/40 rounded-full animate-float" style={{ animationDelay: '0.5s' }}></div>
+        
+        {/* Moving gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-500/5 to-transparent animate-slide-x" style={{ animationDelay: '2s' }}></div>
       </div>
       
       {/* Grid pattern */}
@@ -45,9 +60,10 @@ const Benefits = () => {
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {benefits.map((benefit, index) => <div key={index} className="group text-center text-white hover:-translate-y-4 scroll-animate transition-all duration-500" style={{
-          animationDelay: `${index * 0.1}s`
-        }}>
+          {benefits.map((benefit, index) => (
+            <div key={index} className="group text-center text-white hover:-translate-y-4 scroll-animate transition-all duration-500" style={{
+              animationDelay: `${index * 0.1}s`
+            }}>
               <div className="relative mb-8">
                 <div className={`w-20 h-20 bg-gradient-to-br ${benefit.color} rounded-2xl flex items-center justify-center mx-auto shadow-2xl group-hover:shadow-orange-500/25 group-hover:scale-110 transition-all duration-300`}>
                   {benefit.icon}
@@ -64,9 +80,12 @@ const Benefits = () => {
               </p>
               
               <div className={`mt-6 h-px w-16 bg-gradient-to-r ${benefit.color} mx-auto rounded-full opacity-60 group-hover:opacity-100 group-hover:w-24 transition-all duration-300`}></div>
-            </div>)}
+            </div>
+          ))}
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default Benefits;
