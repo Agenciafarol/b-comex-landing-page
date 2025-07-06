@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
+
 const Hero = () => {
   const handleCTAClick = () => {
     const contactSection = document.getElementById('contact');
@@ -9,12 +10,24 @@ const Hero = () => {
       });
     }
   };
-  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Modern geometric background */}
+
+  return (
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+      {/* Animated background elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-purple-500/10 rounded-full blur-2xl"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl animate-pulse-grow"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-pulse-grow" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-purple-500/10 rounded-full blur-2xl animate-pulse-grow" style={{ animationDelay: '2s' }}></div>
+        
+        {/* Floating particles */}
+        <div className="absolute top-20 left-20 w-2 h-2 bg-orange-400/30 rounded-full animate-float" style={{ animationDelay: '0s' }}></div>
+        <div className="absolute top-40 right-32 w-1 h-1 bg-blue-400/30 rounded-full animate-float" style={{ animationDelay: '1.5s' }}></div>
+        <div className="absolute bottom-32 left-32 w-3 h-3 bg-purple-400/20 rounded-full animate-float" style={{ animationDelay: '3s' }}></div>
+        <div className="absolute top-60 left-3/4 w-1.5 h-1.5 bg-orange-300/40 rounded-full animate-float" style={{ animationDelay: '2.5s' }}></div>
+        <div className="absolute bottom-20 right-20 w-2 h-2 bg-blue-300/30 rounded-full animate-float" style={{ animationDelay: '4s' }}></div>
+        
+        {/* Moving gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-orange-500/5 to-transparent animate-slide-x"></div>
       </div>
       
       {/* Grid pattern overlay */}
@@ -87,6 +100,8 @@ const Hero = () => {
           <div className="w-1.5 h-4 bg-gradient-to-b from-orange-400 to-transparent rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default Hero;
