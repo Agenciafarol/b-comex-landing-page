@@ -22,13 +22,9 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 relative">
         <div className="text-center">
           <div className="mb-12">
-            <div className="flex justify-center mb-6">
-              <img 
-                src="/lovable-uploads/1ca0dc9c-48b1-4065-85f1-843ece309d19.png" 
-                alt="2B COMEX Logo" 
-                className="h-16 w-auto bg-white rounded-lg px-3 py-2"
-              />
-            </div>
+            <h3 className="text-4xl font-montserrat font-bold text-white mb-6">
+              2B COMEX
+            </h3>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto font-opensans leading-relaxed">
               Quer importar, exportar ou internacionalizar sua empresa com estratégia e segurança? 
               Fale com a 2B COMEX.
