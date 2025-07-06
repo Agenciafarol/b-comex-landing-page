@@ -1,27 +1,28 @@
 
 import React from 'react';
+import { Zap, MessageCircle, Target, Shield } from 'lucide-react';
 
 const Benefits = () => {
   const benefits = [
     {
       title: "Agilidade e Economia Real",
       description: "Processos otimizados que reduzem custos e tempo",
-      icon: "⚡"
+      icon: <Zap className="w-8 h-8" />
     },
     {
       title: "Atendimento Direto e Transparente", 
       description: "Comunicação clara em todas as etapas",
-      icon: "💬"
+      icon: <MessageCircle className="w-8 h-8" />
     },
     {
       title: "Estratégia Sob Medida",
       description: "Soluções personalizadas para seu negócio",
-      icon: "🎯"
+      icon: <Target className="w-8 h-8" />
     },
     {
       title: "Segurança Jurídica e Operacional",
       description: "Total conformidade legal e redução de riscos",
-      icon: "🛡️"
+      icon: <Shield className="w-8 h-8" />
     }
   ];
 
@@ -51,7 +52,7 @@ const Benefits = () => {
                 className="text-center text-white hover-lift scroll-animate"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-6 text-3xl shadow-xl">
+                <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl">
                   {benefit.icon}
                 </div>
                 <h3 className="text-xl font-montserrat font-bold mb-4">
