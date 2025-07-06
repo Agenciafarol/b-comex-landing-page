@@ -11,70 +11,84 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Video Background */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+      {/* Modern geometric background */}
       <div className="absolute inset-0">
-        <video 
-          autoPlay 
-          muted 
-          loop 
-          playsInline
-          className="w-full h-full object-cover"
-          poster="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=1920&h=1080&fit=crop"
-        >
-          <source src="https://player.vimeo.com/external/434045526.sd.mp4?s=c27eecc69a27dbc4ff2b87d38afc35f1a9e7c02d&profile_id=164&oauth2_token_id=57447761" type="video/mp4" />
-        </video>
-        {/* Fallback background image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=1920&h=1080&fit=crop')",
-          }}
-        />
-        {/* Cinematic overlay */}
-        <div className="absolute inset-0 video-overlay"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-purple-500/10 rounded-full blur-2xl"></div>
       </div>
       
-      {/* Animated particles */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-orange-500/30 rounded-full animate-float"></div>
-        <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-white/20 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute bottom-1/4 left-1/3 w-1.5 h-1.5 bg-orange-500/20 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
-      </div>
+      {/* Grid pattern overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
       
       {/* Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center text-white animate-fade-in">
-        <div className="mb-8 animate-slide-in-left">
-          <span className="inline-flex items-center bg-orange-500/20 text-orange-400 px-6 py-3 rounded-full text-sm font-medium border border-orange-500/30 backdrop-blur-sm">
-            ✨ 25+ anos de experiência internacional
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 text-center text-white">
+        <div className="mb-8 animate-fade-in">
+          <span className="inline-flex items-center bg-gradient-to-r from-orange-500/20 to-orange-600/20 text-orange-400 px-6 py-3 rounded-full text-sm font-medium border border-orange-500/30 backdrop-blur-xl shadow-2xl">
+            <span className="w-2 h-2 bg-orange-400 rounded-full mr-3 animate-pulse"></span>
+            25+ anos transformando negócios globalmente
           </span>
         </div>
         
-        <h1 className="text-4xl md:text-7xl font-montserrat font-bold mb-6 leading-tight animate-slide-in-right" style={{ animationDelay: '0.3s' }}>
-          Expanda sua empresa para o mundo com{' '}
-          <span className="text-orange-500 gradient-text">segurança e estratégia</span>
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight animate-slide-in-right bg-gradient-to-r from-white via-slate-100 to-slate-300 bg-clip-text text-transparent" style={{ animationDelay: '0.3s' }}>
+          Expanda sua empresa para o{' '}
+          <span className="text-transparent bg-gradient-to-r from-orange-400 via-orange-500 to-yellow-500 bg-clip-text animate-pulse">
+            mundo
+          </span>
         </h1>
         
-        <p className="text-xl md:text-2xl mb-10 text-slate-300 max-w-4xl mx-auto leading-relaxed font-opensans animate-fade-up" style={{ animationDelay: '0.6s' }}>
-          A 2B COMEX é referência em comércio exterior há mais de 25 anos, 
-          conectando empresas a oportunidades globais com eficiência, agilidade e conformidade.
+        <p className="text-xl md:text-2xl mb-12 text-slate-300 max-w-4xl mx-auto leading-relaxed animate-fade-up" style={{ animationDelay: '0.6s' }}>
+          Conectamos sua empresa a oportunidades globais com 
+          <span className="text-orange-400 font-semibold"> segurança, estratégia e excelência</span>
         </p>
         
-        <div className="animate-scale-in" style={{ animationDelay: '0.9s' }}>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-scale-in" style={{ animationDelay: '0.9s' }}>
           <Button 
             onClick={handleCTAClick}
             size="lg" 
-            className="bg-orange-500 hover:bg-orange-600 text-white px-10 py-5 text-xl font-montserrat font-semibold transition-all duration-300 hover:scale-105 shadow-2xl hover:shadow-3xl"
+            className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-6 text-lg font-semibold rounded-2xl shadow-2xl hover:shadow-orange-500/25 hover:scale-105 transition-all duration-300 border border-orange-400/20"
           >
-            Falar com um especialista
+            Começar agora
+            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
           </Button>
+          
+          <Button 
+            variant="outline"
+            size="lg"
+            className="bg-white/5 border-white/20 text-white hover:bg-white/10 px-8 py-6 text-lg rounded-2xl backdrop-blur-xl"
+          >
+            Saiba mais
+          </Button>
+        </div>
+        
+        {/* Stats */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 animate-fade-up" style={{ animationDelay: '1.2s' }}>
+          <div className="text-center">
+            <div className="text-3xl md:text-4xl font-bold text-orange-400 mb-2">25+</div>
+            <div className="text-slate-400 text-sm">Anos de experiência</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl md:text-4xl font-bold text-orange-400 mb-2">500+</div>
+            <div className="text-slate-400 text-sm">Empresas atendidas</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl md:text-4xl font-bold text-orange-400 mb-2">50+</div>
+            <div className="text-slate-400 text-sm">Países alcançados</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl md:text-4xl font-bold text-orange-400 mb-2">98%</div>
+            <div className="text-slate-400 text-sm">Satisfação dos clientes</div>
+          </div>
         </div>
       </div>
       
-      {/* Scroll Indicator */}
+      {/* Modern scroll indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-white/60 rounded-full mt-2 animate-pulse"></div>
+        <div className="w-8 h-12 border-2 border-white/20 rounded-full flex justify-center backdrop-blur-xl bg-white/5">
+          <div className="w-1.5 h-4 bg-gradient-to-b from-orange-400 to-transparent rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
     </section>
