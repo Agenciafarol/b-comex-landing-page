@@ -40,9 +40,7 @@ const Benefits = () => {
           </span>
           <h2 className="text-4xl md:text-6xl text-white mb-6 leading-tight font-extrabold lg:text-5xl">
             Por que escolher a{' '}
-            <span className="text-transparent bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text">
-              2B COMEX?
-            </span>
+            <span className="text-transparent bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-5xl">2BCOMEX?</span>
           </h2>
         </div>
         
