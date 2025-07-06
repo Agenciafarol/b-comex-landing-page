@@ -3,42 +3,72 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 
 const Hero = () => {
+  const handleCTAClick = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-r from-slate-900 to-slate-800 overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=1920&h=1080&fit=crop')",
-        }}
-      >
-        <div className="absolute inset-0 bg-slate-900/75"></div>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Video Background */}
+      <div className="absolute inset-0">
+        <video 
+          autoPlay 
+          muted 
+          loop 
+          playsInline
+          className="w-full h-full object-cover"
+          poster="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=1920&h=1080&fit=crop"
+        >
+          <source src="https://player.vimeo.com/external/434045526.sd.mp4?s=c27eecc69a27dbc4ff2b87d38afc35f1a9e7c02d&profile_id=164&oauth2_token_id=57447761" type="video/mp4" />
+        </video>
+        {/* Fallback background image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=1920&h=1080&fit=crop')",
+          }}
+        />
+        {/* Cinematic overlay */}
+        <div className="absolute inset-0 video-overlay"></div>
+      </div>
+      
+      {/* Animated particles */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-orange-500/30 rounded-full animate-float"></div>
+        <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-white/20 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-1/4 left-1/3 w-1.5 h-1.5 bg-orange-500/20 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
       </div>
       
       {/* Content */}
-      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center text-white animate-fade-in">
-        <div className="mb-6">
-          <span className="inline-flex items-center bg-orange-500/20 text-orange-400 px-4 py-2 rounded-full text-sm font-medium border border-orange-500/30">
+      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center text-white animate-fade-in">
+        <div className="mb-8 animate-slide-in-left">
+          <span className="inline-flex items-center bg-orange-500/20 text-orange-400 px-6 py-3 rounded-full text-sm font-medium border border-orange-500/30 backdrop-blur-sm">
             ✨ 25+ anos de experiência internacional
           </span>
         </div>
         
-        <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+        <h1 className="text-4xl md:text-7xl font-montserrat font-bold mb-6 leading-tight animate-slide-in-right" style={{ animationDelay: '0.3s' }}>
           Expanda sua empresa para o mundo com{' '}
-          <span className="text-orange-500">segurança e estratégia</span>
+          <span className="text-orange-500 gradient-text">segurança e estratégia</span>
         </h1>
         
-        <p className="text-xl md:text-2xl mb-8 text-slate-300 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-xl md:text-2xl mb-10 text-slate-300 max-w-4xl mx-auto leading-relaxed font-opensans animate-fade-up" style={{ animationDelay: '0.6s' }}>
           A 2B COMEX é referência em comércio exterior há mais de 25 anos, 
           conectando empresas a oportunidades globais com eficiência, agilidade e conformidade.
         </p>
         
-        <Button 
-          size="lg" 
-          className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
-        >
-          Falar com um especialista
-        </Button>
+        <div className="animate-scale-in" style={{ animationDelay: '0.9s' }}>
+          <Button 
+            onClick={handleCTAClick}
+            size="lg" 
+            className="bg-orange-500 hover:bg-orange-600 text-white px-10 py-5 text-xl font-montserrat font-semibold transition-all duration-300 hover:scale-105 shadow-2xl hover:shadow-3xl"
+          >
+            Falar com um especialista
+          </Button>
+        </div>
       </div>
       
       {/* Scroll Indicator */}
