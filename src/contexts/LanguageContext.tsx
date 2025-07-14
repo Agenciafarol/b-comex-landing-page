@@ -1,7 +1,6 @@
-
 import React, { createContext, useContext, useState } from 'react';
 
-type Language = 'pt' | 'en';
+type Language = 'pt' | 'en' | 'es';
 
 interface LanguageContextType {
   language: Language;
@@ -201,6 +200,97 @@ const translations = {
     
     // Fixed CTA
     'fixedCta.text': 'Talk to specialist'
+  },
+  es: {
+    // Hero section
+    'hero.badge': '25+ años transformando negocios globalmente',
+    'hero.title': 'Expande tu empresa al',
+    'hero.titleHighlight': 'mundo',
+    'hero.subtitle': 'Conectamos tu empresa a oportunidades globales con seguridad, estrategia y excelencia',
+    'hero.cta': 'Empezar ahora',
+    'hero.stats.experience': 'Años de experiencia',
+    'hero.stats.companies': 'Empresas atendidas',
+    'hero.stats.countries': 'Países alcanzados',
+    'hero.stats.satisfaction': 'Satisfacción del cliente',
+    
+    // About section
+    'about.badge': 'Sobre nosotros',
+    'about.title': 'Especialistas en',
+    'about.titleHighlight': 'soluciones globales',
+    'about.description': 'Con más de 25 años de experiencia, 2B COMEX ofrece soluciones completas en importación, exportación e internacionalización de empresas.',
+    'about.compliance.title': 'Cumplimiento Total',
+    'about.compliance.description': 'Garantizamos total cumplimiento legal en todas las operaciones',
+    'about.agility.title': 'Agilidad',
+    'about.agility.description': 'Procesos optimizados para resultados rápidos',
+    'about.quote': 'Conectamos empresas al mundo con estrategia, ética y excelencia.',
+    'about.commitment': 'Nuestro compromiso',
+    
+    // Services section
+    'services.title': 'Cómo podemos ayudar a tu empresa',
+    'services.industries.title': 'Industrias Brasileñas',
+    'services.industries.description': 'Estrategias para llevar tus productos al mercado internacional',
+    'services.foreign.title': 'Empresas Extranjeras',
+    'services.foreign.description': 'Navegación completa por las regulaciones y oportunidades locales',
+    'services.import.title': 'Importación Ágil',
+    'services.import.description': 'Importación optimizada, económica y segura',
+    'services.cta': 'Quiero saber más',
+    
+    // Benefits section
+    'benefits.badge': 'Por qué elegirnos',
+    'benefits.title': 'Por qué elegir',
+    'benefits.titleHighlight': '2BCOMEX?',
+    'benefits.agility.title': 'Agilidad y Economía Real',
+    'benefits.agility.description': 'Procesos optimizados que reducen costos y tiempo',
+    'benefits.communication.title': 'Atención Directa y Transparente',
+    'benefits.communication.description': 'Comunicación clara en todas las etapas',
+    'benefits.strategy.title': 'Estrategia a Medida',
+    'benefits.strategy.description': 'Soluciones personalizadas para tu negocio',
+    'benefits.security.title': 'Seguridad Jurídica y Operacional',
+    'benefits.security.description': 'Total cumplimiento legal y reducción de riesgos',
+    
+    // Services List section
+    'servicesList.badge': 'Nuestros Servicios',
+    'servicesList.title': 'Soluciones completas para',
+    'servicesList.titleHighlight': 'tu éxito global',
+    'servicesList.subtitle': 'Ofrecemos todas las herramientas necesarias para tu expansión internacional',
+    'servicesList.internationalization': 'Internacionalización de Empresas',
+    'servicesList.internationalization.desc': 'Estrategias completas para expansión internacional',
+    'servicesList.intelligence': 'Inteligencia de Mercado',
+    'servicesList.intelligence.desc': 'Análisis detallados de oportunidades globales',
+    'servicesList.training': 'Entrenamiento de Equipos',
+    'servicesList.training.desc': 'Capacitación especializada en comercio exterior',
+    'servicesList.regimes': 'Regímenes Especiales',
+    'servicesList.regimes.desc': 'Aprovechamiento de beneficios fiscales y tributarios',
+    'servicesList.logistics': 'Logística Internacional',
+    'servicesList.logistics.desc': 'Gestión completa de la cadena de suministro global',
+    'servicesList.consulting': 'Consultoría Documental',
+    'servicesList.consulting.desc': 'Elaboración y revisión de documentos comerciales',
+    
+    // Video section
+    'video.title': 'Ve cómo ayudamos a las empresas a conquistar el mercado global',
+    'video.subtitle': '¡Mira el video a continuación y aprende más!',
+    
+    // Contact section
+    'contact.title': '¿Conversamos?',
+    'contact.subtitle': 'Completa el formulario o contáctanos por WhatsApp. Nuestro equipo responderá lo más rápido posible.',
+    'contact.form.name': 'Tu nombre completo',
+    'contact.form.email': 'Tu correo electrónico',
+    'contact.form.phone': 'Teléfono (opcional)',
+    'contact.form.message': 'Tu mensaje',
+    'contact.form.submit': 'Enviar mensaje',
+    'contact.direct.title': 'Contáctanos directamente',
+    'contact.guarantee.title': 'Respuesta rápida garantizada',
+    'contact.guarantee.text': 'Nuestro equipo responde todos los mensajes en hasta x horas hábiles. ¡Tu expansión internacional no puede esperar!',
+    
+    // Footer
+    'footer.description': '¿Quieres importar, exportar o internacionalizar tu empresa con estrategia y seguridad? Habla con 2B COMEX.',
+    'footer.nav.home': 'Inicio',
+    'footer.nav.services': 'Servicios',
+    'footer.nav.contact': 'Contacto',
+    'footer.copyright': '© 2025 2B COMEX – Especialista en Comercio Exterior',
+    
+    // Fixed CTA
+    'fixedCta.text': 'Hablar con especialista'
   }
 };
 
@@ -208,7 +298,11 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   const [language, setLanguage] = useState<Language>('pt');
 
   const toggleLanguage = () => {
-    setLanguage(prev => prev === 'pt' ? 'en' : 'pt');
+    setLanguage(prev => {
+      if (prev === 'pt') return 'en';
+      if (prev === 'en') return 'es';
+      return 'pt';
+    });
   };
 
   const t = (key: string): string => {

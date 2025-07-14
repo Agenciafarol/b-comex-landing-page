@@ -7,6 +7,12 @@ import { useLanguage } from '../contexts/LanguageContext';
 const LanguageToggle = () => {
   const { language, toggleLanguage } = useLanguage();
 
+  const getNextLanguage = () => {
+    if (language === 'pt') return 'EN';
+    if (language === 'en') return 'ES';
+    return 'PT';
+  };
+
   return (
     <div className="fixed top-6 right-6 z-50">
       <Button
@@ -16,7 +22,7 @@ const LanguageToggle = () => {
         className="bg-white/10 border-white/20 text-white hover:bg-white/20 backdrop-blur-xl shadow-2xl transition-all duration-300 hover:scale-105"
       >
         <Globe className="w-4 h-4 mr-2" />
-        {language === 'pt' ? 'EN' : 'PT'}
+        {getNextLanguage()}
       </Button>
     </div>
   );
