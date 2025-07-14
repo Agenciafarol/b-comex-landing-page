@@ -2,25 +2,28 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Container, Plane, Map } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Services = () => {
+  const { t } = useLanguage();
+  
   const services = [
     {
       icon: <Container className="w-10 h-10" />,
-      title: "Indústrias Brasileiras",
-      description: "Estratégias para levar seus produtos ao mercado internacional",
+      title: t('services.industries.title'),
+      description: t('services.industries.description'),
       bgColor: "bg-blue-500"
     },
     {
       icon: <Plane className="w-10 h-10" />,
-      title: "Empresas Estrangeiras", 
-      description: "Navegação completa pelas regulamentações e oportunidades locais",
+      title: t('services.foreign.title'), 
+      description: t('services.foreign.description'),
       bgColor: "bg-green-500"
     },
     {
       icon: <Map className="w-10 h-10" />,
-      title: "Importação Ágil",
-      description: "Importação otimizada, econômica e segura",
+      title: t('services.import.title'),
+      description: t('services.import.description'),
       bgColor: "bg-orange-500"
     }
   ];
@@ -37,7 +40,7 @@ const Services = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-20 scroll-animate">
           <h2 className="text-4xl md:text-5xl font-montserrat font-bold text-slate-900 mb-6">
-            Como podemos ajudar sua empresa
+            {t('services.title')}
           </h2>
           <div className="w-24 h-1 bg-orange-500 mx-auto rounded-full"></div>
         </div>
@@ -69,7 +72,7 @@ const Services = () => {
             size="lg"
             className="bg-orange-500 hover:bg-orange-600 text-white px-10 py-4 text-lg font-montserrat font-semibold hover:scale-105 transition-all duration-300"
           >
-            Quero saber mais
+            {t('services.cta')}
           </Button>
         </div>
       </div>

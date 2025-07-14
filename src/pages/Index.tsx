@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Hero from '../components/Hero';
 import About from '../components/About';
@@ -9,6 +8,7 @@ import VideoSection from '../components/VideoSection';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import FixedCTA from '../components/FixedCTA';
+import LanguageToggle from '../components/LanguageToggle';
 
 const Index = () => {
   useEffect(() => {
@@ -33,6 +33,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
+      <LanguageToggle />
       <Hero />
       <About />
       <div id="services">

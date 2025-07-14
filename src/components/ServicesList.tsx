@@ -1,42 +1,45 @@
 
 import React from 'react';
 import { Globe, BarChart3, GraduationCap, FileText, Truck, ClipboardList } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const ServicesList = () => {
+  const { t } = useLanguage();
+  
   const services = [
     {
-      title: "Internacionalização de Empresas",
-      description: "Estratégias completas para expansão internacional",
+      title: t('servicesList.internationalization'),
+      description: t('servicesList.internationalization.desc'),
       icon: <Globe className="w-8 h-8" />,
       color: "from-blue-500 to-blue-600"
     },
     {
-      title: "Inteligência de Mercado", 
-      description: "Análises detalhadas de oportunidades globais",
+      title: t('servicesList.intelligence'), 
+      description: t('servicesList.intelligence.desc'),
       icon: <BarChart3 className="w-8 h-8" />,
       color: "from-green-500 to-green-600"
     },
     {
-      title: "Treinamento de Equipes",
-      description: "Capacitação especializada em comércio exterior",
+      title: t('servicesList.training'),
+      description: t('servicesList.training.desc'),
       icon: <GraduationCap className="w-8 h-8" />,
       color: "from-purple-500 to-purple-600"
     },
     {
-      title: "Regimes Especiais",
-      description: "Aproveitamento de benefícios fiscais e tributários",  
+      title: t('servicesList.regimes'),
+      description: t('servicesList.regimes.desc'),  
       icon: <ClipboardList className="w-8 h-8" />,
       color: "from-orange-500 to-orange-600"
     },
     {
-      title: "Logística Internacional",
-      description: "Gestão completa da cadeia de suprimentos global",
+      title: t('servicesList.logistics'),
+      description: t('servicesList.logistics.desc'),
       icon: <Truck className="w-8 h-8" />,
       color: "from-red-500 to-red-600"
     },
     {
-      title: "Consultoria Documental",
-      description: "Elaboração e revisão de documentos comerciais",
+      title: t('servicesList.consulting'),
+      description: t('servicesList.consulting.desc'),
       icon: <FileText className="w-8 h-8" />,
       color: "from-indigo-500 to-indigo-600"
     }
@@ -52,16 +55,16 @@ const ServicesList = () => {
         <div className="text-center mb-20 scroll-animate">
           <span className="inline-flex items-center bg-orange-100 text-orange-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
             <span className="w-2 h-2 bg-orange-500 rounded-full mr-2"></span>
-            Nossos Serviços
+            {t('servicesList.badge')}
           </span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
-            Soluções completas para{' '}
+            {t('servicesList.title')}{' '}
             <span className="text-transparent bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text">
-              seu sucesso global
+              {t('servicesList.titleHighlight')}
             </span>
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            Oferecemos todas as ferramentas necessárias para sua expansão internacional
+            {t('servicesList.subtitle')}
           </p>
         </div>
         
