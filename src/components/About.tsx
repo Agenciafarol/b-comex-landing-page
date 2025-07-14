@@ -77,11 +77,11 @@ const About = () => {
               <div className="absolute -inset-8 bg-gradient-to-r from-orange-500/20 via-orange-400/10 to-slate-900/20 rounded-3xl blur-2xl"></div>
               <div className="relative bg-white rounded-3xl p-2 shadow-2xl">
                 <img 
-                  src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=600&h=500&fit=crop" 
-                  alt="Equipe 2B COMEX"
+                  src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=500&fit=crop" 
+                  alt="Porto com navios de carga"
                   className="w-full h-[400px] md:h-[500px] object-cover rounded-2xl"
                 />
-                <div className="absolute inset-2 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent rounded-2xl"></div>
+                <div className="absolute inset-2 bg-gradient-to-t from-slate-900/30 via-transparent to-transparent rounded-2xl"></div>
                 
                 {/* Modern floating badge */}
                 <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white p-6 rounded-2xl shadow-2xl">
