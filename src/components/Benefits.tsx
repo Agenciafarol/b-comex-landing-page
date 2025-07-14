@@ -1,25 +1,29 @@
+
 import React from 'react';
 import { Zap, MessageCircle, Target, Shield } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Benefits = () => {
+  const { t } = useLanguage();
+  
   const benefits = [{
-    title: "Agilidade e Economia Real",
-    description: "Processos otimizados que reduzem custos e tempo",
+    title: t('benefits.agility.title'),
+    description: t('benefits.agility.description'),
     icon: <Zap className="w-8 h-8" />,
     color: "from-yellow-500 to-orange-500"
   }, {
-    title: "Atendimento Direto e Transparente", 
-    description: "Comunicação clara em todas as etapas",
+    title: t('benefits.communication.title'), 
+    description: t('benefits.communication.description'),
     icon: <MessageCircle className="w-8 h-8" />,
     color: "from-blue-500 to-indigo-500"
   }, {
-    title: "Estratégia Sob Medida",
-    description: "Soluções personalizadas para seu negócio",
+    title: t('benefits.strategy.title'),
+    description: t('benefits.strategy.description'),
     icon: <Target className="w-8 h-8" />,
     color: "from-green-500 to-emerald-500"
   }, {
-    title: "Segurança Jurídica e Operacional",
-    description: "Total conformidade legal e redução de riscos",
+    title: t('benefits.security.title'),
+    description: t('benefits.security.description'),
     icon: <Shield className="w-8 h-8" />,
     color: "from-purple-500 to-violet-500"
   }];
@@ -51,11 +55,11 @@ const Benefits = () => {
         <div className="text-center mb-20 scroll-animate">
           <span className="inline-flex items-center bg-orange-500/20 text-orange-400 px-4 py-2 rounded-full text-sm font-medium mb-6 border border-orange-500/30 backdrop-blur-xl">
             <span className="w-2 h-2 bg-orange-400 rounded-full mr-2 animate-pulse"></span>
-            Por que nos escolher
+            {t('benefits.badge')}
           </span>
           <h2 className="text-4xl md:text-6xl text-white mb-6 leading-tight font-extrabold lg:text-5xl">
-            Por que escolher a{' '}
-            <span className="text-transparent bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-5xl">2BCOMEX?</span>
+            {t('benefits.title')}{' '}
+            <span className="text-transparent bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-5xl">{t('benefits.titleHighlight')}</span>
           </h2>
         </div>
         

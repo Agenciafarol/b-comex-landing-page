@@ -1,7 +1,10 @@
 
 import React from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const About = () => {
+  const { t } = useLanguage();
+  
   return (
     <section className="py-20 md:py-32 bg-gradient-to-br from-slate-50 to-white relative overflow-hidden">
       {/* Modern background elements */}
@@ -16,20 +19,19 @@ const About = () => {
             <div className="mb-8">
               <span className="inline-flex items-center bg-orange-100 text-orange-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
                 <span className="w-2 h-2 bg-orange-500 rounded-full mr-2"></span>
-                Sobre nós
+                {t('about.badge')}
               </span>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-8 leading-tight">
-                Especialistas em{' '}
+                {t('about.title')}{' '}
                 <span className="text-transparent bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text">
-                  soluções globais
+                  {t('about.titleHighlight')}
                 </span>
               </h2>
             </div>
             
             <div className="space-y-8 text-lg text-slate-700">
               <p className="leading-relaxed text-xl">
-                Com mais de <span className="font-semibold text-orange-600">25 anos de atuação</span>, a 2B COMEX oferece soluções completas 
-                em importação, exportação e internacionalização de empresas.
+                {t('about.description')}
               </p>
               
               <div className="grid sm:grid-cols-2 gap-6">
@@ -40,8 +42,8 @@ const About = () => {
                     </svg>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-slate-900 mb-2">Conformidade Total</h4>
-                    <p className="text-slate-600">Garantimos total conformidade legal em todas as operações</p>
+                    <h4 className="font-semibold text-slate-900 mb-2">{t('about.compliance.title')}</h4>
+                    <p className="text-slate-600">{t('about.compliance.description')}</p>
                   </div>
                 </div>
                 
@@ -52,19 +54,19 @@ const About = () => {
                     </svg>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-slate-900 mb-2">Agilidade</h4>
-                    <p className="text-slate-600">Processos otimizados para resultados rápidos</p>
+                    <h4 className="font-semibold text-slate-900 mb-2">{t('about.agility.title')}</h4>
+                    <p className="text-slate-600">{t('about.agility.description')}</p>
                   </div>
                 </div>
               </div>
               
               <div className="bg-gradient-to-r from-orange-50 via-orange-25 to-yellow-50 p-8 rounded-2xl border border-orange-100 shadow-lg">
                 <blockquote className="text-2xl font-semibold text-slate-900 italic leading-relaxed mb-4">
-                  "Conectamos empresas ao mundo com estratégia, ética e excelência."
+                  "{t('about.quote')}"
                 </blockquote>
                 <div className="flex items-center">
                   <div className="w-16 h-1 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full"></div>
-                  <span className="ml-4 text-sm font-medium text-slate-600 uppercase tracking-wide">Nosso compromisso</span>
+                  <span className="ml-4 text-sm font-medium text-slate-600 uppercase tracking-wide">{t('about.commitment')}</span>
                 </div>
               </div>
             </div>
@@ -85,7 +87,7 @@ const About = () => {
                 <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white p-6 rounded-2xl shadow-2xl">
                   <div className="text-center">
                     <div className="text-3xl font-bold">25+</div>
-                    <div className="text-sm opacity-90">Anos</div>
+                    <div className="text-sm opacity-90">{t('hero.stats.experience')}</div>
                   </div>
                 </div>
               </div>

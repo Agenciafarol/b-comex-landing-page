@@ -32,6 +32,18 @@ const translations = {
     'hero.stats.countries': 'Países alcançados',
     'hero.stats.satisfaction': 'Satisfação dos clientes',
     
+    // About section
+    'about.badge': 'Sobre nós',
+    'about.title': 'Especialistas em',
+    'about.titleHighlight': 'soluções globais',
+    'about.description': 'Com mais de 25 anos de atuação, a 2B COMEX oferece soluções completas em importação, exportação e internacionalização de empresas.',
+    'about.compliance.title': 'Conformidade Total',
+    'about.compliance.description': 'Garantimos total conformidade legal em todas as operações',
+    'about.agility.title': 'Agilidade',
+    'about.agility.description': 'Processos otimizados para resultados rápidos',
+    'about.quote': 'Conectamos empresas ao mundo com estratégia, ética e excelência.',
+    'about.commitment': 'Nosso compromisso',
+    
     // Services section
     'services.title': 'Como podemos ajudar sua empresa',
     'services.industries.title': 'Indústrias Brasileiras',
@@ -41,6 +53,19 @@ const translations = {
     'services.import.title': 'Importação Ágil',
     'services.import.description': 'Importação otimizada, econômica e segura',
     'services.cta': 'Quero saber mais',
+    
+    // Benefits section
+    'benefits.badge': 'Por que nos escolher',
+    'benefits.title': 'Por que escolher a',
+    'benefits.titleHighlight': '2BCOMEX?',
+    'benefits.agility.title': 'Agilidade e Economia Real',
+    'benefits.agility.description': 'Processos otimizados que reduzem custos e tempo',
+    'benefits.communication.title': 'Atendimento Direto e Transparente',
+    'benefits.communication.description': 'Comunicação clara em todas as etapas',
+    'benefits.strategy.title': 'Estratégia Sob Medida',
+    'benefits.strategy.description': 'Soluções personalizadas para seu negócio',
+    'benefits.security.title': 'Segurança Jurídica e Operacional',
+    'benefits.security.description': 'Total conformidade legal e redução de riscos',
     
     // Services List section
     'servicesList.badge': 'Nossos Serviços',
@@ -59,6 +84,10 @@ const translations = {
     'servicesList.logistics.desc': 'Gestão completa da cadeia de suprimentos global',
     'servicesList.consulting': 'Consultoria Documental',
     'servicesList.consulting.desc': 'Elaboração e revisão de documentos comerciais',
+    
+    // Video section
+    'video.title': 'Veja como ajudamos empresas a conquistar o mercado global',
+    'video.subtitle': 'Assista o vídeo abaixo e saiba mais!',
     
     // Contact section
     'contact.title': 'Vamos conversar?',
@@ -94,6 +123,18 @@ const translations = {
     'hero.stats.countries': 'Countries reached',
     'hero.stats.satisfaction': 'Customer satisfaction',
     
+    // About section
+    'about.badge': 'About us',
+    'about.title': 'Specialists in',
+    'about.titleHighlight': 'global solutions',
+    'about.description': 'With over 25 years of experience, 2B COMEX offers complete solutions in import, export and company internationalization.',
+    'about.compliance.title': 'Total Compliance',
+    'about.compliance.description': 'We guarantee total legal compliance in all operations',
+    'about.agility.title': 'Agility',
+    'about.agility.description': 'Optimized processes for fast results',
+    'about.quote': 'We connect companies to the world with strategy, ethics and excellence.',
+    'about.commitment': 'Our commitment',
+    
     // Services section
     'services.title': 'How we can help your company',
     'services.industries.title': 'Brazilian Industries',
@@ -103,6 +144,19 @@ const translations = {
     'services.import.title': 'Agile Import',
     'services.import.description': 'Optimized, economical and secure import',
     'services.cta': 'Learn more',
+    
+    // Benefits section
+    'benefits.badge': 'Why choose us',
+    'benefits.title': 'Why choose',
+    'benefits.titleHighlight': '2BCOMEX?',
+    'benefits.agility.title': 'Real Agility and Economy',
+    'benefits.agility.description': 'Optimized processes that reduce costs and time',
+    'benefits.communication.title': 'Direct and Transparent Service',
+    'benefits.communication.description': 'Clear communication at all stages',
+    'benefits.strategy.title': 'Tailor-made Strategy',
+    'benefits.strategy.description': 'Customized solutions for your business',
+    'benefits.security.title': 'Legal and Operational Security',
+    'benefits.security.description': 'Total legal compliance and risk reduction',
     
     // Services List section
     'servicesList.badge': 'Our Services',
@@ -121,6 +175,10 @@ const translations = {
     'servicesList.logistics.desc': 'Complete management of the global supply chain',
     'servicesList.consulting': 'Document Consulting',
     'servicesList.consulting.desc': 'Preparation and review of commercial documents',
+    
+    // Video section
+    'video.title': 'See how we help companies conquer the global market',
+    'video.subtitle': 'Watch the video below and learn more!',
     
     // Contact section
     'contact.title': 'Let\'s talk?',

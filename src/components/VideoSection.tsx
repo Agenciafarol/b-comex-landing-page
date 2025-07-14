@@ -1,7 +1,11 @@
+
 import React from 'react';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const VideoSection = () => {
+  const { t } = useLanguage();
+  
   return (
     <>
       <div className="section-separator"></div>
@@ -30,9 +34,9 @@ const VideoSection = () => {
         <div className="max-w-5xl mx-auto px-6 text-center relative">
           <div className="scroll-animate">
             <h2 className="text-4xl md:text-5xl font-montserrat font-bold text-white mb-6">
-              Veja como ajudamos empresas a conquistar o mercado global
+              {t('video.title')}
             </h2>
-            <p className="text-xl text-slate-300 mb-16 font-opensans">Assista o vídeo abaixo e saiba mais!</p>
+            <p className="text-xl text-slate-300 mb-16 font-opensans">{t('video.subtitle')}</p>
             <div className="w-24 h-1 bg-orange-500 mx-auto rounded-full mb-16"></div>
             
             <Dialog>
