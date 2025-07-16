@@ -92,13 +92,6 @@ const ServicesList = () => {
                 <p className="text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors">
                   {service.description}
                 </p>
-                
-                {/* Arrow icon */}
-                <div className="mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <svg className="w-6 h-6 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </div>
               </div>
             </div>
           ))}
