@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -86,7 +87,7 @@ const Hero = () => {
         {/* Stats */}
         <div style={{
         animationDelay: '1.2s'
-      }} className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 animate-fade-up">
+      }} className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 animate-fade-up">
           <div className="text-center">
             <div className="text-3xl md:text-4xl font-bold text-orange-400 mb-2">20+</div>
             <div className="text-slate-400 text-sm">{t('hero.stats.experience')}</div>
@@ -99,7 +100,6 @@ const Hero = () => {
             <div className="text-3xl md:text-4xl font-bold text-orange-400 mb-2">50+</div>
             <div className="text-slate-400 text-sm">{t('hero.stats.countries')}</div>
           </div>
-          
         </div>
       </div>
       
