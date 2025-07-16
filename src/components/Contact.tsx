@@ -1,13 +1,79 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent } from '@/components/ui/card';
 import { useLanguage } from '../contexts/LanguageContext';
+import { supabase } from '@/integrations/supabase/client';
+import { useToast } from '@/hooks/use-toast';
 
 const Contact = () => {
   const { t } = useLanguage();
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!formData.name || !formData.email || !formData.message) {
+      toast({
+        title: "Erro",
+        description: "Por favor, preencha todos os campos obrigatórios.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: formData
+      });
+
+      if (error) {
+        throw error;
+      }
+
+      toast({
+        title: "Sucesso!",
+        description: "Sua mensagem foi enviada com sucesso. Entraremos em contato em breve!",
+      });
+
+      // Limpar formulário
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        message: ''
+      });
+
+    } catch (error: any) {
+      console.error('Erro ao enviar formulário:', error);
+      toast({
+        title: "Erro",
+        description: "Houve um erro ao enviar sua mensagem. Tente novamente.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   
   return (
     <section id="contact" className="py-24 bg-white textured-bg">
@@ -24,21 +90,55 @@ const Contact = () => {
           {/* Formulário */}
           <Card className="scroll-animate shadow-2xl border-0">
             <CardContent className="p-10">
-              <form className="space-y-8">
+              <form onSubmit={handleSubmit} className="space-y-8">
                 <div>
-                  <Input placeholder={t('contact.form.name')} className="h-14 text-lg font-opensans border-2 border-slate-200 focus:border-orange-500 rounded-xl" />
+                  <Input 
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    placeholder={t('contact.form.name')} 
+                    className="h-14 text-lg font-opensans border-2 border-slate-200 focus:border-orange-500 rounded-xl" 
+                    required
+                  />
                 </div>
                 <div>
-                  <Input type="email" placeholder={t('contact.form.email')} className="h-14 text-lg font-opensans border-2 border-slate-200 focus:border-orange-500 rounded-xl" />
+                  <Input 
+                    type="email" 
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    placeholder={t('contact.form.email')} 
+                    className="h-14 text-lg font-opensans border-2 border-slate-200 focus:border-orange-500 rounded-xl" 
+                    required
+                  />
                 </div>
                 <div>
-                  <Input type="tel" placeholder={t('contact.form.phone')} className="h-14 text-lg font-opensans border-2 border-slate-200 focus:border-orange-500 rounded-xl" />
+                  <Input 
+                    type="tel" 
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    placeholder={t('contact.form.phone')} 
+                    className="h-14 text-lg font-opensans border-2 border-slate-200 focus:border-orange-500 rounded-xl" 
+                  />
                 </div>
                 <div>
-                  <Textarea placeholder={t('contact.form.message')} rows={6} className="resize-none text-lg font-opensans border-2 border-slate-200 focus:border-orange-500 rounded-xl" />
+                  <Textarea 
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    placeholder={t('contact.form.message')} 
+                    rows={6} 
+                    className="resize-none text-lg font-opensans border-2 border-slate-200 focus:border-orange-500 rounded-xl" 
+                    required
+                  />
                 </div>
-                <Button type="submit" className="w-full bg-orange-500 hover:bg-orange-600 text-white h-14 text-lg font-montserrat font-semibold rounded-xl hover:scale-105 transition-all duration-300">
-                  {t('contact.form.submit')}
+                <Button 
+                  type="submit" 
+                  disabled={isSubmitting}
+                  className="w-full bg-orange-500 hover:bg-orange-600 text-white h-14 text-lg font-montserrat font-semibold rounded-xl hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                >
+                  {isSubmitting ? 'Enviando...' : t('contact.form.submit')}
                 </Button>
               </form>
             </CardContent>
