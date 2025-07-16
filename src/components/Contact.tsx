@@ -72,7 +72,12 @@ const Contact = () => {
                     </div>
                   </div>
                   
-                  <div className="flex items-center space-x-4 p-4 bg-white rounded-xl shadow-md hover-lift">
+                  <a 
+                    href="https://instagram.com/2bcomex" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center space-x-4 p-4 bg-white rounded-xl shadow-md hover-lift cursor-pointer transition-transform duration-200 hover:scale-105"
+                  >
                     <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
                       <span className="text-white font-bold text-lg">IG</span>
                     </div>
@@ -80,7 +85,7 @@ const Contact = () => {
                       <p className="font-montserrat font-semibold text-slate-900">Instagram</p>
                       <p className="text-slate-700 font-opensans">@2bcomex</p>
                     </div>
-                  </div>
+                  </a>
                 </div>
               </div>
               
