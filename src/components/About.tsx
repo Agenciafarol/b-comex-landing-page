@@ -34,28 +34,31 @@ const About = () => {
                 {t('about.description')}
               </p>
               
-              <div className="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+              {/* Container box for compliance and agility */}
+              <div className="bg-white/80 backdrop-blur-sm border border-slate-200 rounded-2xl p-8 shadow-lg max-w-3xl mx-auto">
+                <div className="grid sm:grid-cols-2 gap-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-slate-900 mb-2">{t('about.compliance.title')}</h4>
+                      <p className="text-slate-600">{t('about.compliance.description')}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-slate-900 mb-2">{t('about.compliance.title')}</h4>
-                    <p className="text-slate-600">{t('about.compliance.description')}</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-slate-900 mb-2">{t('about.agility.title')}</h4>
-                    <p className="text-slate-600">{t('about.agility.description')}</p>
+                  
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-slate-900 mb-2">{t('about.agility.title')}</h4>
+                      <p className="text-slate-600">{t('about.agility.description')}</p>
+                    </div>
                   </div>
                 </div>
               </div>
