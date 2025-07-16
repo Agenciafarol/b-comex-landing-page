@@ -1,3 +1,4 @@
+
 import React, { createContext, useContext, useState } from 'react';
 
 type Language = 'pt' | 'en' | 'es';
@@ -21,7 +22,7 @@ export const useLanguage = () => {
 const translations = {
   pt: {
     // Hero section
-    'hero.badge': '25+ anos transformando negócios globalmente',
+    'hero.badge': '20+ anos transformando negócios globalmente',
     'hero.title': 'Expanda sua empresa para o',
     'hero.titleHighlight': 'mundo',
     'hero.subtitle': 'Conectamos sua empresa a oportunidades globais com segurança, estratégia e excelência',
@@ -35,7 +36,7 @@ const translations = {
     'about.badge': 'Sobre nós',
     'about.title': 'Especialistas em',
     'about.titleHighlight': 'soluções globais',
-    'about.description': 'Com mais de 25 anos de atuação, a 2B COMEX oferece soluções completas em importação, exportação e internacionalização de empresas.',
+    'about.description': 'Com mais de 20 anos de atuação, a 2B COMEX oferece soluções completas em importação, exportação e internacionalização de empresas.',
     'about.compliance.title': 'Conformidade Total',
     'about.compliance.description': 'Garantimos total conformidade legal em todas as operações',
     'about.agility.title': 'Agilidade',
@@ -112,7 +113,7 @@ const translations = {
   },
   en: {
     // Hero section
-    'hero.badge': '25+ years transforming businesses globally',
+    'hero.badge': '20+ years transforming businesses globally',
     'hero.title': 'Expand your company to the',
     'hero.titleHighlight': 'world',
     'hero.subtitle': 'We connect your company to global opportunities with security, strategy and excellence',
@@ -126,7 +127,7 @@ const translations = {
     'about.badge': 'About us',
     'about.title': 'Specialists in',
     'about.titleHighlight': 'global solutions',
-    'about.description': 'With over 25 years of experience, 2B COMEX offers complete solutions in import, export and company internationalization.',
+    'about.description': 'With over 20 years of experience, 2B COMEX offers complete solutions in import, export and company internationalization.',
     'about.compliance.title': 'Total Compliance',
     'about.compliance.description': 'We guarantee total legal compliance in all operations',
     'about.agility.title': 'Agility',
@@ -203,7 +204,7 @@ const translations = {
   },
   es: {
     // Hero section
-    'hero.badge': '25+ años transformando negocios globalmente',
+    'hero.badge': '20+ años transformando negocios globalmente',
     'hero.title': 'Expande tu empresa al',
     'hero.titleHighlight': 'mundo',
     'hero.subtitle': 'Conectamos tu empresa a oportunidades globales con seguridad, estrategia y excelencia',
@@ -217,7 +218,7 @@ const translations = {
     'about.badge': 'Sobre nosotros',
     'about.title': 'Especialistas en',
     'about.titleHighlight': 'soluciones globales',
-    'about.description': 'Con más de 25 años de experiencia, 2B COMEX ofrece soluciones completas en importación, exportación e internacionalización de empresas.',
+    'about.description': 'Con más de 20 años de experiencia, 2B COMEX ofrece soluciones completas en importación, exportación e internacionalización de empresas.',
     'about.compliance.title': 'Cumplimiento Total',
     'about.compliance.description': 'Garantizamos total cumplimiento legal en todas las operaciones',
     'about.agility.title': 'Agilidad',
