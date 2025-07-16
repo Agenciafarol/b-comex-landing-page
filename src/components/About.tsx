@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 
@@ -7,6 +6,7 @@ const About = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const bg1Ref = useRef<HTMLDivElement>(null);
   const bg2Ref = useRef<HTMLDivElement>(null);
+  const floatingElements = useRef<(HTMLDivElement | null)[]>([]);
   
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -21,13 +21,23 @@ const About = () => {
       const normalizedY = (y / rect.height - 0.5) * 2;
       
       // Apply subtle movement to background elements
-      const moveX1 = normalizedX * 15;
-      const moveY1 = normalizedY * 15;
-      const moveX2 = normalizedX * -10;
-      const moveY2 = normalizedY * -10;
+      const moveX1 = normalizedX * 20;
+      const moveY1 = normalizedY * 20;
+      const moveX2 = normalizedX * -15;
+      const moveY2 = normalizedY * -15;
       
       bg1Ref.current.style.transform = `translate(${moveX1}px, ${moveY1}px)`;
       bg2Ref.current.style.transform = `translate(${moveX2}px, ${moveY2}px)`;
+      
+      // Move floating elements
+      floatingElements.current.forEach((element, index) => {
+        if (element) {
+          const multiplier = (index + 1) * 8;
+          const moveX = normalizedX * multiplier * (index % 2 === 0 ? 1 : -1);
+          const moveY = normalizedY * multiplier * (index % 2 === 0 ? -1 : 1);
+          element.style.transform = `translate(${moveX}px, ${moveY}px)`;
+        }
+      });
     };
     
     const section = sectionRef.current;
@@ -54,6 +64,32 @@ const About = () => {
         <div 
           ref={bg2Ref}
           className="absolute bottom-10 left-10 w-96 h-96 bg-gradient-to-br from-slate-100 to-slate-50 rounded-full opacity-30 blur-3xl transition-transform duration-300 ease-out"
+        ></div>
+        
+        {/* Floating geometric elements */}
+        <div 
+          ref={el => floatingElements.current[0] = el}
+          className="absolute top-1/4 left-1/3 w-8 h-8 bg-orange-200/30 rounded-lg rotate-45 transition-transform duration-500 ease-out"
+        ></div>
+        <div 
+          ref={el => floatingElements.current[1] = el}
+          className="absolute top-1/2 right-1/4 w-6 h-6 bg-slate-200/40 rounded-full transition-transform duration-500 ease-out"
+        ></div>
+        <div 
+          ref={el => floatingElements.current[2] = el}
+          className="absolute bottom-1/3 left-1/4 w-4 h-16 bg-orange-100/20 rounded-full transition-transform duration-500 ease-out"
+        ></div>
+        <div 
+          ref={el => floatingElements.current[3] = el}
+          className="absolute top-3/4 right-1/3 w-12 h-2 bg-slate-100/50 rounded-full transition-transform duration-500 ease-out"
+        ></div>
+        <div 
+          ref={el => floatingElements.current[4] = el}
+          className="absolute top-1/3 right-1/2 w-3 h-3 bg-orange-300/25 rounded-full transition-transform duration-500 ease-out"
+        ></div>
+        <div 
+          ref={el => floatingElements.current[5] = el}
+          className="absolute bottom-1/4 left-1/2 w-10 h-1 bg-slate-200/30 rounded-full rotate-12 transition-transform duration-500 ease-out"
         ></div>
       </div>
       
