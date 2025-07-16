@@ -1,16 +1,60 @@
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const About = () => {
   const { t } = useLanguage();
+  const sectionRef = useRef<HTMLElement>(null);
+  const bg1Ref = useRef<HTMLDivElement>(null);
+  const bg2Ref = useRef<HTMLDivElement>(null);
+  
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!sectionRef.current || !bg1Ref.current || !bg2Ref.current) return;
+      
+      const rect = sectionRef.current.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      // Normalize coordinates to -1 to 1 range
+      const normalizedX = (x / rect.width - 0.5) * 2;
+      const normalizedY = (y / rect.height - 0.5) * 2;
+      
+      // Apply subtle movement to background elements
+      const moveX1 = normalizedX * 15;
+      const moveY1 = normalizedY * 15;
+      const moveX2 = normalizedX * -10;
+      const moveY2 = normalizedY * -10;
+      
+      bg1Ref.current.style.transform = `translate(${moveX1}px, ${moveY1}px)`;
+      bg2Ref.current.style.transform = `translate(${moveX2}px, ${moveY2}px)`;
+    };
+    
+    const section = sectionRef.current;
+    if (section) {
+      section.addEventListener('mousemove', handleMouseMove);
+      
+      return () => {
+        section.removeEventListener('mousemove', handleMouseMove);
+      };
+    }
+  }, []);
   
   return (
-    <section className="py-20 md:py-32 bg-gradient-to-br from-slate-50 to-white relative overflow-hidden">
-      {/* Modern background elements */}
+    <section 
+      ref={sectionRef}
+      className="py-20 md:py-32 bg-gradient-to-br from-slate-50 to-white relative overflow-hidden"
+    >
+      {/* Modern background elements with mouse movement */}
       <div className="absolute inset-0">
-        <div className="absolute top-10 right-10 w-72 h-72 bg-gradient-to-br from-orange-100 to-orange-50 rounded-full opacity-50 blur-3xl"></div>
-        <div className="absolute bottom-10 left-10 w-96 h-96 bg-gradient-to-br from-slate-100 to-slate-50 rounded-full opacity-30 blur-3xl"></div>
+        <div 
+          ref={bg1Ref}
+          className="absolute top-10 right-10 w-72 h-72 bg-gradient-to-br from-orange-100 to-orange-50 rounded-full opacity-50 blur-3xl transition-transform duration-300 ease-out"
+        ></div>
+        <div 
+          ref={bg2Ref}
+          className="absolute bottom-10 left-10 w-96 h-96 bg-gradient-to-br from-slate-100 to-slate-50 rounded-full opacity-30 blur-3xl transition-transform duration-300 ease-out"
+        ></div>
       </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
