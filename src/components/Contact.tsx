@@ -188,11 +188,6 @@ const Contact = () => {
                   </a>
                 </div>
               </div>
-              
-              <div className="bg-gradient-to-r from-orange-50 to-orange-100 p-8 rounded-2xl border-2 border-orange-200 shadow-lg">
-                <h4 className="font-montserrat font-bold text-slate-900 mb-3 text-lg">{t('contact.guarantee.title')}</h4>
-                <p className="text-slate-700 font-opensans leading-relaxed">{t('contact.guarantee.text')}</p>
-              </div>
             </div>
           </div>
         </div>
