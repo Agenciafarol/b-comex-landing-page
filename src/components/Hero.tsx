@@ -47,7 +47,7 @@ const Hero = () => {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-2b-blue/10 text-2b-blue px-4 py-2 rounded-full text-sm font-medium mb-6 animate-fade-in">
               <div className="w-2 h-2 bg-2b-blue rounded-full animate-pulse"></div>
-              Especialista em Comércio Exterior
+              Especialistas em Comércio Exterior
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-2b-blue mb-6 leading-tight animate-fade-in">

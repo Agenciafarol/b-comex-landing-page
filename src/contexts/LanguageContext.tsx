@@ -66,7 +66,7 @@ const translations = {
     'footer.home': 'Início',
     'footer.services': 'Serviços',
     'footer.contact': 'Contato',
-    'footer.copyright': '© 2025 2B COMEX – Especialista em Comércio Exterior'
+    'footer.copyright': '© 2025 2B COMEX – Especialistas em Comércio Exterior'
   },
   en: {
     // Hero section
@@ -114,7 +114,7 @@ const translations = {
     'footer.home': 'Home',
     'footer.services': 'Services',
     'footer.contact': 'Contact',
-    'footer.copyright': '© 2025 2B COMEX – Foreign Trade Specialist'
+    'footer.copyright': '© 2025 2B COMEX – Foreign Trade Specialists'
   },
   es: {
     // Hero section
@@ -162,7 +162,7 @@ const translations = {
     'footer.home': 'Inicio',
     'footer.services': 'Servicios',
     'footer.contact': 'Contacto',
-    'footer.copyright': '© 2025 2B COMEX – Especialista en Comercio Exterior'
+    'footer.copyright': '© 2025 2B COMEX – Especialistas en Comercio Exterior'
   }
 };
 
