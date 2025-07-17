@@ -28,7 +28,7 @@ const WhatWeDo = () => {
     <section className="relative py-20 bg-gray-50">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center opacity-20 z-0" 
+        className="absolute inset-0 bg-cover bg-center opacity-100 z-0" 
         style={{ 
           backgroundImage: `url('/lovable-uploads/833f7dda-836f-4182-bd38-ce6fa750cbac.png')`,
           filter: 'brightness(0.7) contrast(1.2)'
