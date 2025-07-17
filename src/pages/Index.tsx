@@ -15,11 +15,8 @@ const Index = () => {
       <Header />
       <Hero />
       <WhatWeDo />
-      {/* Remove any margin/padding between WhatWeDo and WhyChooseUs for seamless transition */}
-      <div className="bg-2b-blue">
-        <WhyChooseUs />
-        <MainServices />
-      </div>
+      <WhyChooseUs />
+      <MainServices />
       <VideoSection />
       <Contact />
       <Footer />
