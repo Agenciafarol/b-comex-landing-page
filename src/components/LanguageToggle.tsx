@@ -5,7 +5,17 @@ import { Globe } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const LanguageToggle = () => {
-  const { language, toggleLanguage } = useLanguage();
+  const { language, setLanguage } = useLanguage();
+
+  const handleLanguageChange = () => {
+    if (language === 'pt') {
+      setLanguage('en');
+    } else if (language === 'en') {
+      setLanguage('es');
+    } else {
+      setLanguage('pt');
+    }
+  };
 
   const getNextLanguage = () => {
     if (language === 'pt') return 'EN';
@@ -16,7 +26,7 @@ const LanguageToggle = () => {
   return (
     <div className="fixed top-6 right-6 z-50">
       <Button
-        onClick={toggleLanguage}
+        onClick={handleLanguageChange}
         variant="outline"
         size="sm"
         className="bg-white/10 border-white/20 text-white hover:bg-white/20 backdrop-blur-xl shadow-2xl transition-all duration-300 hover:scale-105"

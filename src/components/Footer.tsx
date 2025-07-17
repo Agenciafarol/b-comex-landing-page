@@ -23,7 +23,7 @@ const Footer = () => {
         <div className="flex flex-col items-center">
           {/* Logo */}
           <img 
-            src="/lovable-uploads/86d802ff-a307-491b-8cde-27c8490ce490.png" 
+            src="/lovable-uploads/33742b3a-3712-4162-b9bc-31d9c6619ae8.png" 
             alt="2B COMEX" 
             className="h-12 w-auto mb-8 filter brightness-0 invert"
           />
