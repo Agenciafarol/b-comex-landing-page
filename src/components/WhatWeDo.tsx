@@ -37,11 +37,11 @@ const WhatWeDo = () => {
       
       <div className="relative max-w-6xl mx-auto px-6 z-10">
         <div className="text-center mb-16">
-          <div className="inline-block bg-white/90 backdrop-blur-sm px-8 py-4 rounded-lg shadow-lg">
-            <h2 className="text-3xl font-semibold text-2b-blue">
-              {t('services.title')}
-            </h2>
-          </div>
+          <h2 className="text-4xl font-bold text-white mb-2" style={{
+            textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 0, 0, 0.5)'
+          }}>
+            {t('services.title')}
+          </h2>
         </div>
         
         <div className="grid md:grid-cols-3 gap-8">
