@@ -37,7 +37,7 @@ const translations = {
     
     // Por que escolher
     'why.title': 'Por que escolher a 2B COMEX',
-    'why.experience': '20+ anos de experiência',
+    'why.experience': 'Mais de 20 anos de experiência',
     'why.consulting': 'Consultoria estratégica e prática',
     'why.service': 'Atendimento direto e transparente',
     'why.compliance': 'Conformidade jurídica internacional',
