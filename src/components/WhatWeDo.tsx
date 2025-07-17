@@ -25,8 +25,17 @@ const WhatWeDo = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="max-w-6xl mx-auto px-6">
+    <section className="relative py-20 bg-gray-50">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center opacity-20 z-0" 
+        style={{ 
+          backgroundImage: `url('/lovable-uploads/833f7dda-836f-4182-bd38-ce6fa750cbac.png')`,
+          filter: 'brightness(0.7) contrast(1.2)'
+        }}
+      />
+      
+      <div className="relative max-w-6xl mx-auto px-6 z-10">
         <h2 className="text-3xl font-semibold text-2b-blue text-center mb-16">
           {t('services.title')}
         </h2>
@@ -35,7 +44,7 @@ const WhatWeDo = () => {
           {services.map((service, index) => (
             <div 
               key={index}
-              className="bg-white p-8 rounded-lg shadow-sm hover-scale border border-gray-100"
+              className="bg-white/80 p-8 rounded-lg shadow-sm hover-scale border border-gray-100"
             >
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0">
