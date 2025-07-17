@@ -23,7 +23,7 @@ const translations = {
   pt: {
     // Hero section
     'hero.title': 'Conectamos sua empresa ao mercado global',
-    'hero.subtitle': '20+ anos de experiência em comércio exterior com soluções completas em exportação, importação e internacionalização.',
+    'hero.subtitle': 'Mais de 20 anos de experiência em comércio exterior com soluções completas em exportação, importação e internacionalização.',
     'hero.cta': 'Falar com um especialista',
     
     // O que fazemos
