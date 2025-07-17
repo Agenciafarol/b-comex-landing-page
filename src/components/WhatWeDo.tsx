@@ -36,9 +36,13 @@ const WhatWeDo = () => {
       />
       
       <div className="relative max-w-6xl mx-auto px-6 z-10">
-        <h2 className="text-3xl font-semibold text-2b-blue text-center mb-16">
-          {t('services.title')}
-        </h2>
+        <div className="flex justify-center mb-16">
+          <div className="inline-block bg-white/90 backdrop-blur-sm px-8 py-4 rounded-xl shadow-lg border border-white/20">
+            <h2 className="text-3xl font-semibold text-2b-blue text-center">
+              {t('services.title')}
+            </h2>
+          </div>
+        </div>
         
         <div className="grid md:grid-cols-3 gap-8">
           {services.map((service, index) => (
