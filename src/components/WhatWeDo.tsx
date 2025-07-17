@@ -26,9 +26,15 @@ const WhatWeDo = () => {
 
   return (
     <section className="relative">
+      {/* Background image with reduced opacity */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center opacity-20 z-0" 
+        style={{ backgroundImage: `url('/lovable-uploads/8064952f-0977-4878-ba58-fbdd2a71934e.png')` }}
+      />
+
       {/* Services content section */}
-      <div className="py-20 bg-gray-50 relative z-10">
-        <div className="max-w-6xl mx-auto px-6">
+      <div className="py-20 bg-gray-50/90 relative z-10">
+        <div className="max-w-6xl mx-auto px-6 relative">
           <h2 className="text-3xl font-semibold text-2b-blue text-center mb-16">
             {t('services.title')}
           </h2>
@@ -37,7 +43,7 @@ const WhatWeDo = () => {
             {services.map((service, index) => (
               <div 
                 key={index}
-                className="bg-white p-8 rounded-lg shadow-sm hover-scale border border-gray-100"
+                className="bg-white/90 p-8 rounded-lg shadow-sm hover-scale border border-gray-100"
               >
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0">
@@ -58,19 +64,8 @@ const WhatWeDo = () => {
         </div>
       </div>
 
-      {/* Image section with fade effect */}
-      <div className="w-full h-96 relative">
-        <div 
-          className="absolute inset-0 bg-cover bg-center" 
-          style={{ backgroundImage: `url('/lovable-uploads/8064952f-0977-4878-ba58-fbdd2a71934e.png')` }}
-        />
-        
-        {/* Top fade effect (from services section to image) */}
-        <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-gray-50 to-transparent" />
-        
-        {/* Bottom fade effect (from image to blue section) */}
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#2d2d72] to-transparent" />
-      </div>
+      {/* Fade effect to blue section */}
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#2d2d72] to-transparent" />
     </section>
   );
 };
