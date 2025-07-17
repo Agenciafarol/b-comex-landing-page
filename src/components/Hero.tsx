@@ -41,53 +41,45 @@ const Hero = () => {
       </div>
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Content Side */}
-          <div className="text-center">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-2b-blue/10 text-2b-blue px-4 py-2 rounded-full text-sm font-medium mb-6 animate-fade-in">
-              <div className="w-2 h-2 bg-2b-blue rounded-full animate-pulse"></div>
-              Especialistas em Comércio Exterior
-            </div>
-
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-2b-blue mb-6 leading-tight animate-fade-in">
-              {t('hero.title')}
-            </h1>
-            
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
-              {t('hero.subtitle')}
-            </p>
-
-            {/* Features highlights */}
-            <div className="flex flex-wrap gap-6 mb-8 justify-center animate-fade-in" style={{ animationDelay: '0.3s' }}>
-              <div className="flex items-center gap-2 text-gray-600">
-                <div className="w-2 h-2 bg-2b-orange rounded-full"></div>
-                <span className="text-sm font-medium">Consultoria Especializada</span>
-              </div>
-              <div className="flex items-center gap-2 text-gray-600">
-                <div className="w-2 h-2 bg-2b-orange rounded-full"></div>
-                <span className="text-sm font-medium">Processos Ágeis</span>
-              </div>
-              <div className="flex items-center gap-2 text-gray-600">
-                <div className="w-2 h-2 bg-2b-orange rounded-full"></div>
-                <span className="text-sm font-medium">Resultados Garantidos</span>
-              </div>
-            </div>
-            
-            <Button 
-              onClick={handleCTAClick} 
-              className="bg-2b-orange hover:bg-orange-600 text-white font-semibold px-8 py-4 text-lg rounded-lg hover-scale animate-fade-in group" 
-              style={{ animationDelay: '0.4s' }}
-            >
-              {t('hero.cta')}
-              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-            </Button>
+        <div className="flex flex-col items-center text-center">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 bg-2b-blue/10 text-2b-blue px-4 py-2 rounded-full text-sm font-medium mb-6 animate-fade-in">
+            <div className="w-2 h-2 bg-2b-blue rounded-full animate-pulse"></div>
+            Especialistas em Comércio Exterior
           </div>
 
-          {/* Visual Side */}
-          <div className="relative animate-fade-in" style={{ animationDelay: '0.5s' }}>
-            
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-2b-blue mb-6 leading-tight animate-fade-in max-w-4xl">
+            {t('hero.title')}
+          </h1>
+          
+          <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-2xl animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            {t('hero.subtitle')}
+          </p>
+
+          {/* Features highlights */}
+          <div className="flex flex-wrap gap-6 mb-8 justify-center animate-fade-in" style={{ animationDelay: '0.3s' }}>
+            <div className="flex items-center gap-2 text-gray-600">
+              <div className="w-2 h-2 bg-2b-orange rounded-full"></div>
+              <span className="text-sm font-medium">Consultoria Especializada</span>
+            </div>
+            <div className="flex items-center gap-2 text-gray-600">
+              <div className="w-2 h-2 bg-2b-orange rounded-full"></div>
+              <span className="text-sm font-medium">Processos Ágeis</span>
+            </div>
+            <div className="flex items-center gap-2 text-gray-600">
+              <div className="w-2 h-2 bg-2b-orange rounded-full"></div>
+              <span className="text-sm font-medium">Resultados Garantidos</span>
+            </div>
           </div>
+          
+          <Button 
+            onClick={handleCTAClick} 
+            className="bg-2b-orange hover:bg-orange-600 text-white font-semibold px-8 py-4 text-lg rounded-lg hover-scale animate-fade-in group" 
+            style={{ animationDelay: '0.4s' }}
+          >
+            {t('hero.cta')}
+            <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+          </Button>
         </div>
       </div>
     </section>
