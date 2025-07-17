@@ -52,7 +52,7 @@ const translations = {
     'mainServices.consulting': 'Consultoria documental',
     
     // Vídeo
-    'video.title': 'Assista nossa apresentação institucional',
+    'video.title': 'Assista e saiba mais',
     
     // Contato
     'contact.title': 'Entre em contato',
@@ -66,7 +66,7 @@ const translations = {
     'footer.home': 'Início',
     'footer.services': 'Serviços',
     'footer.contact': 'Contato',
-    'footer.copyright': '© 2024 2B COMEX – Especialista em Comércio Exterior'
+    'footer.copyright': '© 2025 2B COMEX – Especialista em Comércio Exterior'
   },
   en: {
     // Hero section
@@ -100,7 +100,7 @@ const translations = {
     'mainServices.consulting': 'Document consulting',
     
     // Vídeo
-    'video.title': 'Watch our institutional presentation',
+    'video.title': 'Watch and learn more',
     
     // Contato
     'contact.title': 'Get in touch',
@@ -114,7 +114,7 @@ const translations = {
     'footer.home': 'Home',
     'footer.services': 'Services',
     'footer.contact': 'Contact',
-    'footer.copyright': '© 2024 2B COMEX – Foreign Trade Specialist'
+    'footer.copyright': '© 2025 2B COMEX – Foreign Trade Specialist'
   },
   es: {
     // Hero section
@@ -148,7 +148,7 @@ const translations = {
     'mainServices.consulting': 'Consultoría documental',
     
     // Vídeo
-    'video.title': 'Vea nuestra presentación institucional',
+    'video.title': 'Mira y aprende más',
     
     // Contato
     'contact.title': 'Ponte en contacto',
@@ -162,7 +162,7 @@ const translations = {
     'footer.home': 'Inicio',
     'footer.services': 'Servicios',
     'footer.contact': 'Contacto',
-    'footer.copyright': '© 2024 2B COMEX – Especialista en Comercio Exterior'
+    'footer.copyright': '© 2025 2B COMEX – Especialista en Comercio Exterior'
   }
 };
 
