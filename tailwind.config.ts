@@ -22,7 +22,7 @@ export default {
 			fontFamily: {
 				'montserrat': ['Montserrat', 'sans-serif'],
 				'opensans': ['Open Sans', 'sans-serif'],
-				sans: ['Open Sans', 'system-ui', 'sans-serif'],
+				sans: ['Helvetica', 'system-ui', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -58,6 +58,9 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// 2B COMEX Brand Colors
+				'brand-blue': '#2d2d72',
+				'brand-orange': '#ec652a',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -138,6 +141,22 @@ export default {
 					'50%': {
 						transform: 'scale(1.05)'
 					}
+				},
+				'float': {
+					'0%, 100%': {
+						transform: 'translateY(0px)'
+					},
+					'50%': {
+						transform: 'translateY(-10px)'
+					}
+				},
+				'slide-x': {
+					'0%': {
+						transform: 'translateX(-100%)'
+					},
+					'100%': {
+						transform: 'translateX(100%)'
+					}
 				}
 			},
 			animation: {
@@ -148,7 +167,9 @@ export default {
 				'slide-in-left': 'slide-in-left 0.8s ease-out forwards',
 				'slide-in-right': 'slide-in-right 0.8s ease-out forwards',
 				'scale-in': 'scale-in 0.6s ease-out forwards',
-				'pulse-grow': 'pulse-grow 2s ease-in-out infinite'
+				'pulse-grow': 'pulse-grow 2s ease-in-out infinite',
+				'float': 'float 3s ease-in-out infinite',
+				'slide-x': 'slide-x 15s linear infinite'
 			}
 		}
 	},
