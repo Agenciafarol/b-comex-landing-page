@@ -8,7 +8,7 @@ const Header = () => {
   const { language, setLanguage, t } = useLanguage();
 
   const handleWhatsAppClick = () => {
-    window.open('https://wa.me/5547901679196', '_blank');
+    window.open('https://wa.me/5547991679196', '_blank');
   };
 
   return (
