@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 
@@ -5,65 +6,54 @@ const Footer = () => {
   const { t } = useLanguage();
   
   const scrollToSection = (sectionId: string) => {
+    if (sectionId === 'home') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth'
-      });
-    } else if (sectionId === 'inicio') {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
+      element.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   return (
-    <footer className="bg-slate-900 py-16 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-10 right-10 w-40 h-40 border border-orange-500 rounded-full"></div>
-        
-      </div>
-      
-      <div className="max-w-7xl mx-auto px-6 relative">
-        <div className="text-center">
-          <div className="mb-12">
-            <h3 className="text-4xl font-montserrat font-bold text-white mb-6">
-              2B COMEX
-            </h3>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto font-opensans leading-relaxed">
-              {t('footer.description')}
-            </p>
+    <footer className="bg-2b-blue py-12">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="flex flex-col items-center">
+          {/* Logo */}
+          <img 
+            src="/lovable-uploads/86d802ff-a307-491b-8cde-27c8490ce490.png" 
+            alt="2B COMEX" 
+            className="h-12 w-auto mb-8 filter brightness-0 invert"
+          />
+          
+          {/* Navegação */}
+          <div className="flex gap-8 mb-8">
+            <button 
+              onClick={() => scrollToSection('home')}
+              className="text-white hover:text-orange-300 transition-colors"
+            >
+              {t('footer.home')}
+            </button>
+            <button 
+              onClick={() => scrollToSection('services')}
+              className="text-white hover:text-orange-300 transition-colors"
+            >
+              {t('footer.services')}
+            </button>
+            <button 
+              onClick={() => scrollToSection('contact')}
+              className="text-white hover:text-orange-300 transition-colors"
+            >
+              {t('footer.contact')}
+            </button>
           </div>
           
-          {/* Navigation Links */}
-          <div className="mb-12">
-            <nav className="flex justify-center space-x-12">
-              <button onClick={() => scrollToSection('inicio')} className="nav-link text-slate-300 font-opensans font-medium text-lg">
-                {t('footer.nav.home')}
-              </button>
-              <button onClick={() => scrollToSection('services')} className="nav-link text-slate-300 font-opensans font-medium text-lg">
-                {t('footer.nav.services')}
-              </button>
-              <button onClick={() => scrollToSection('contact')} className="nav-link text-slate-300 font-opensans font-medium text-lg">
-                {t('footer.nav.contact')}
-              </button>
-            </nav>
-          </div>
-          
-          {/* Compliance badges */}
-          <div className="mb-12 flex justify-center space-x-8">
-            
-            
-            
-          </div>
-          
-          <div className="border-t border-slate-700 pt-8">
-            <p className="text-slate-400 font-opensans">
-              {t('footer.copyright')}
-            </p>
-          </div>
+          {/* Copyright */}
+          <p className="text-blue-200 text-center">
+            {t('footer.copyright')}
+          </p>
         </div>
       </div>
     </footer>

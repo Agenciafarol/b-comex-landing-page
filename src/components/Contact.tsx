@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Card, CardContent } from '@/components/ui/card';
+import { MessageCircle, Mail, Instagram } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
@@ -15,7 +15,6 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: '',
     message: ''
   });
 
@@ -33,7 +32,7 @@ const Contact = () => {
     if (!formData.name || !formData.email || !formData.message) {
       toast({
         title: "Erro",
-        description: "Por favor, preencha todos os campos obrigatórios.",
+        description: "Por favor, preencha todos os campos.",
         variant: "destructive",
       });
       return;
@@ -42,152 +41,118 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+      const { error } = await supabase.functions.invoke('send-contact-email', {
         body: formData
       });
 
-      if (error) {
-        throw error;
-      }
+      if (error) throw error;
 
       toast({
         title: "Sucesso!",
-        description: "Sua mensagem foi enviada com sucesso. Entraremos em contato em breve!",
+        description: "Mensagem enviada com sucesso!",
       });
 
-      // Limpar formulário
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        message: ''
-      });
-
+      setFormData({ name: '', email: '', message: '' });
     } catch (error: any) {
-      console.error('Erro ao enviar formulário:', error);
       toast({
         title: "Erro",
-        description: "Houve um erro ao enviar sua mensagem. Tente novamente.",
+        description: "Erro ao enviar mensagem. Tente novamente.",
         variant: "destructive",
       });
     } finally {
       setIsSubmitting(false);
     }
   };
-  
+
   return (
-    <section id="contact" className="py-24 bg-white textured-bg">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-20 scroll-animate">
-          <h2 className="text-4xl md:text-5xl font-montserrat font-bold text-slate-900 mb-6">
-            {t('contact.title')}
-          </h2>
-          <p className="text-xl text-slate-700 font-opensans">{t('contact.subtitle')}</p>
-          <div className="w-24 h-1 bg-orange-500 mx-auto rounded-full mt-6"></div>
-        </div>
+    <section id="contact" className="py-20 bg-white">
+      <div className="max-w-6xl mx-auto px-6">
+        <h2 className="text-3xl font-semibold text-2b-blue text-center mb-16">
+          {t('contact.title')}
+        </h2>
         
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Formulário */}
-          <Card className="scroll-animate shadow-2xl border-0">
-            <CardContent className="p-10">
-              <form onSubmit={handleSubmit} className="space-y-8">
-                <div>
-                  <Input 
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    placeholder={t('contact.form.name')} 
-                    className="h-14 text-lg font-opensans border-2 border-slate-200 focus:border-orange-500 rounded-xl" 
-                    required
-                  />
-                </div>
-                <div>
-                  <Input 
-                    type="email" 
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    placeholder={t('contact.form.email')} 
-                    className="h-14 text-lg font-opensans border-2 border-slate-200 focus:border-orange-500 rounded-xl" 
-                    required
-                  />
-                </div>
-                <div>
-                  <Input 
-                    type="tel" 
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                    placeholder={t('contact.form.phone')} 
-                    className="h-14 text-lg font-opensans border-2 border-slate-200 focus:border-orange-500 rounded-xl" 
-                  />
-                </div>
-                <div>
-                  <Textarea 
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    placeholder={t('contact.form.message')} 
-                    rows={6} 
-                    className="resize-none text-lg font-opensans border-2 border-slate-200 focus:border-orange-500 rounded-xl" 
-                    required
-                  />
-                </div>
-                <Button 
-                  type="submit" 
-                  disabled={isSubmitting}
-                  className="w-full bg-orange-500 hover:bg-orange-600 text-white h-14 text-lg font-montserrat font-semibold rounded-xl hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
-                >
-                  {isSubmitting ? 'Enviando...' : t('contact.form.submit')}
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
+          <div className="bg-gray-50 p-8 rounded-lg">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <Input 
+                name="name"
+                value={formData.name}
+                onChange={handleInputChange}
+                placeholder={t('contact.form.name')} 
+                className="h-12"
+                required
+              />
+              <Input 
+                type="email" 
+                name="email"
+                value={formData.email}
+                onChange={handleInputChange}
+                placeholder={t('contact.form.email')} 
+                className="h-12"
+                required
+              />
+              <Textarea 
+                name="message"
+                value={formData.message}
+                onChange={handleInputChange}
+                placeholder={t('contact.form.message')} 
+                rows={5}
+                required
+              />
+              <Button 
+                type="submit" 
+                disabled={isSubmitting}
+                className="w-full bg-2b-orange hover:bg-orange-600 text-white h-12 text-lg font-medium"
+              >
+                {isSubmitting ? 'Enviando...' : t('contact.form.submit')}
+              </Button>
+            </form>
+          </div>
           
-          {/* Informações de Contato */}
-          <div className="scroll-animate" style={{ animationDelay: '0.3s' }}>
-            <div className="space-y-8">
-              <div className="bg-gradient-to-br from-slate-50 to-orange-50 p-8 rounded-2xl shadow-lg">
-                <h3 className="text-2xl font-montserrat font-bold text-slate-900 mb-6">
-                  {t('contact.direct.title')}
-                </h3>
-                <div className="space-y-6">
-                  <div className="flex items-center space-x-4 p-4 bg-white rounded-xl shadow-md hover-lift">
-                    <div className="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center">
-                      <span className="text-white font-bold text-lg">W</span>
-                    </div>
-                    <div>
-                      <p className="font-montserrat font-semibold text-slate-900">WhatsApp</p>
-                      <p className="text-slate-700 font-opensans">(47) 90167-9196</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center space-x-4 p-4 bg-white rounded-xl shadow-md hover-lift">
-                    <div className="w-12 h-12 bg-slate-900 rounded-xl flex items-center justify-center">
-                      <span className="text-white font-bold text-lg">@</span>
-                    </div>
-                    <div>
-                      <p className="font-montserrat font-semibold text-slate-900">E-mail</p>  
-                      <p className="text-slate-700 font-opensans">comercial@2bcomex.com.br</p>
-                    </div>
-                  </div>
-                  
-                  <a 
-                    href="https://instagram.com/2bcomex" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex items-center space-x-4 p-4 bg-white rounded-xl shadow-md hover-lift cursor-pointer transition-transform duration-200 hover:scale-105"
-                  >
-                    <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
-                      <span className="text-white font-bold text-lg">IG</span>
-                    </div>
-                    <div>
-                      <p className="font-montserrat font-semibold text-slate-900">Instagram</p>
-                      <p className="text-slate-700 font-opensans">@2bcomex</p>
-                    </div>
-                  </a>
+          {/* Contato direto */}
+          <div className="space-y-8">
+            <h3 className="text-2xl font-semibold text-2b-blue mb-8">
+              {t('contact.direct')}
+            </h3>
+            
+            <div className="space-y-6">
+              <a 
+                href="https://wa.me/5547901679196" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center p-4 bg-green-50 rounded-lg hover-scale border border-green-100"
+              >
+                <MessageCircle className="w-6 h-6 text-green-600 mr-4" />
+                <div>
+                  <p className="font-medium text-gray-900">WhatsApp</p>
+                  <p className="text-gray-600">(47) 90167-9196</p>
                 </div>
-              </div>
+              </a>
+              
+              <a 
+                href="mailto:comercial@2bcomex.com.br"
+                className="flex items-center p-4 bg-blue-50 rounded-lg hover-scale border border-blue-100"
+              >
+                <Mail className="w-6 h-6 text-blue-600 mr-4" />
+                <div>
+                  <p className="font-medium text-gray-900">E-mail</p>
+                  <p className="text-gray-600">comercial@2bcomex.com.br</p>
+                </div>
+              </a>
+              
+              <a 
+                href="https://instagram.com/2bcomex" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center p-4 bg-pink-50 rounded-lg hover-scale border border-pink-100"
+              >
+                <Instagram className="w-6 h-6 text-pink-600 mr-4" />
+                <div>
+                  <p className="font-medium text-gray-900">Instagram</p>
+                  <p className="text-gray-600">@2bcomex</p>
+                </div>
+              </a>
             </div>
           </div>
         </div>
