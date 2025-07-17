@@ -52,7 +52,7 @@ const Footer = () => {
           
           {/* Copyright */}
           <p className="text-blue-200 text-center">
-            {t('footer.copyright')}
+            © 2025 2B COMEX – Especialista em Comércio Exterior
           </p>
         </div>
       </div>
