@@ -118,7 +118,7 @@ const Contact = () => {
             
             <div className="space-y-6">
               <a 
-                href="https://wa.me/5547901679196" 
+                href="https://wa.me/5547991679196" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center p-4 bg-green-50 rounded-lg hover-scale border border-green-100"
@@ -126,7 +126,7 @@ const Contact = () => {
                 <MessageCircle className="w-6 h-6 text-green-600 mr-4" />
                 <div>
                   <p className="font-medium text-gray-900">WhatsApp</p>
-                  <p className="text-gray-600">(47) 90167-9196</p>
+                  <p className="text-gray-600">(47) 99167-9196</p>
                 </div>
               </a>
               
