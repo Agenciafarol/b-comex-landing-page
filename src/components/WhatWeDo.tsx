@@ -25,34 +25,51 @@ const WhatWeDo = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-3xl font-semibold text-2b-blue text-center mb-16">
-          {t('services.title')}
-        </h2>
-        
-        <div className="grid md:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <div 
-              key={index}
-              className="bg-white p-8 rounded-lg shadow-sm hover-scale border border-gray-100"
-            >
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0">
-                  {service.icon}
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-2b-blue mb-3">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    {service.description}
-                  </p>
+    <section className="relative">
+      {/* Services content section */}
+      <div className="py-20 bg-gray-50 relative z-10">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-3xl font-semibold text-2b-blue text-center mb-16">
+            {t('services.title')}
+          </h2>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <div 
+                key={index}
+                className="bg-white p-8 rounded-lg shadow-sm hover-scale border border-gray-100"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0">
+                    {service.icon}
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-2b-blue mb-3">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      {service.description}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
+      </div>
+
+      {/* Image section with fade effect */}
+      <div className="w-full h-96 relative">
+        <div 
+          className="absolute inset-0 bg-cover bg-center" 
+          style={{ backgroundImage: `url('/lovable-uploads/8064952f-0977-4878-ba58-fbdd2a71934e.png')` }}
+        />
+        
+        {/* Top fade effect (from services section to image) */}
+        <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-gray-50 to-transparent" />
+        
+        {/* Bottom fade effect (from image to blue section) */}
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#2d2d72] to-transparent" />
       </div>
     </section>
   );
