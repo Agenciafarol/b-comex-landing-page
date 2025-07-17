@@ -37,11 +37,12 @@ const WhatWeDo = () => {
       
       <div className="relative max-w-6xl mx-auto px-6 z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-2" style={{
-            textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 0, 0, 0.5)'
-          }}>
-            {t('services.title')}
-          </h2>
+          <div className="relative inline-block">
+            <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-black/40 rounded-lg blur-sm"></div>
+            <h2 className="relative text-4xl font-bold text-white px-8 py-2">
+              {t('services.title')}
+            </h2>
+          </div>
         </div>
         
         <div className="grid md:grid-cols-3 gap-8">
