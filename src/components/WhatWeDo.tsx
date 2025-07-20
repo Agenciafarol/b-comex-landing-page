@@ -25,15 +25,21 @@ const WhatWeDo = () => {
   ];
 
   return (
-    <section className="relative py-20 bg-gray-50">
+    <section className="relative py-12 md:py-20 bg-gray-50">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center opacity-100 z-0" 
+        className="absolute inset-0 opacity-100 z-0" 
         style={{ 
           backgroundImage: `url('/lovable-uploads/f293a357-f9c1-499e-b767-569a25023a09.png')`,
-          filter: 'brightness(0.7) contrast(1.2)'
+          filter: 'brightness(0.7) contrast(1.2)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center center',
+          backgroundRepeat: 'no-repeat'
         }}
       />
+      
+      {/* Mobile specific background overlay to improve readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/30 z-1 md:hidden" />
       
       <div className="relative max-w-6xl mx-auto px-6 z-10">
         <div className="flex justify-center mb-16">
