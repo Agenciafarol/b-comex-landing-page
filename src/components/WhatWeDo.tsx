@@ -30,7 +30,7 @@ const WhatWeDo = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center opacity-100 z-0" 
         style={{ 
-          backgroundImage: `url('/lovable-uploads/833f7dda-836f-4182-bd38-ce6fa750cbac.png')`,
+          backgroundImage: `url('/lovable-uploads/f293a357-f9c1-499e-b767-569a25023a09.png')`,
           filter: 'brightness(0.7) contrast(1.2)'
         }}
       />
