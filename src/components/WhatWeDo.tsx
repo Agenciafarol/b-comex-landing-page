@@ -2,9 +2,11 @@
 import React from 'react';
 import { Container, Building2, Package } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useIsMobile } from '../hooks/use-mobile';
 
 const WhatWeDo = () => {
   const { t } = useLanguage();
+  const isMobile = useIsMobile();
 
   const services = [
     {
@@ -24,13 +26,17 @@ const WhatWeDo = () => {
     }
   ];
 
+  const backgroundImage = isMobile 
+    ? '/lovable-uploads/c5a87403-f63a-4d3f-a53f-b0704b789669.png'
+    : '/lovable-uploads/f293a357-f9c1-499e-b767-569a25023a09.png';
+
   return (
     <section className="relative py-12 md:py-20 bg-gray-50">
       {/* Background Image */}
       <div 
         className="absolute inset-0 opacity-100 z-0" 
         style={{ 
-          backgroundImage: `url('/lovable-uploads/f293a357-f9c1-499e-b767-569a25023a09.png')`,
+          backgroundImage: `url('${backgroundImage}')`,
           filter: 'brightness(0.7) contrast(1.2)',
           backgroundSize: 'cover',
           backgroundPosition: 'center center',
