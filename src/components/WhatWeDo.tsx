@@ -31,7 +31,7 @@ const WhatWeDo = () => {
     : '/lovable-uploads/f293a357-f9c1-499e-b767-569a25023a09.png';
 
   return (
-    <section className="relative py-12 md:py-20 bg-gray-50">
+    <section id="services" className="relative py-12 md:py-20 bg-gray-50">
       {/* Background Image */}
       <div 
         className="absolute inset-0 opacity-100 z-0" 

@@ -25,6 +25,10 @@ const translations = {
     'hero.title': 'Conectamos sua empresa ao mercado global',
     'hero.subtitle': 'Mais de 20 anos de experiência em comércio exterior com soluções completas em exportação, importação e internacionalização.',
     'hero.cta': 'Falar com um especialista',
+    'hero.badge': 'Especialistas em Comércio Exterior',
+    'hero.feature1': 'Consultoria Especializada',
+    'hero.feature2': 'Processos Ágeis',
+    'hero.feature3': 'Resultados Garantidos',
     
     // O que fazemos
     'services.title': 'O que fazemos',
@@ -130,6 +134,10 @@ const translations = {
     'hero.title': 'We connect your company to the global market',
     'hero.subtitle': '20+ years of experience in foreign trade with complete solutions in export, import and internationalization.',
     'hero.cta': 'Talk to a specialist',
+    'hero.badge': 'Foreign Trade Specialists',
+    'hero.feature1': 'Specialized Consulting',
+    'hero.feature2': 'Agile Processes',
+    'hero.feature3': 'Guaranteed Results',
     
     // O que fazemos
     'services.title': 'What we do',
@@ -235,6 +243,10 @@ const translations = {
     'hero.title': 'Conectamos tu empresa al mercado global',
     'hero.subtitle': '20+ años de experiencia en comercio exterior con soluciones completas en exportación, importación e internacionalización.',
     'hero.cta': 'Hablar con un especialista',
+    'hero.badge': 'Especialistas en Comercio Exterior',
+    'hero.feature1': 'Consultoría Especializada',
+    'hero.feature2': 'Procesos Ágiles',
+    'hero.feature3': 'Resultados Garantizados',
     
     // O que fazemos
     'services.title': 'Qué hacemos',
