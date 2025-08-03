@@ -31,8 +31,8 @@ const Contact = () => {
     
     if (!formData.name || !formData.email || !formData.message) {
       toast({
-        title: "Erro",
-        description: "Por favor, preencha todos os campos.",
+        title: t('contact.form.errorTitle'),
+        description: t('contact.form.error'),
         variant: "destructive",
       });
       return;
@@ -48,15 +48,15 @@ const Contact = () => {
       if (error) throw error;
 
       toast({
-        title: "Sucesso!",
-        description: "Mensagem enviada com sucesso!",
+        title: t('contact.form.successTitle'),
+        description: t('contact.form.success'),
       });
 
       setFormData({ name: '', email: '', message: '' });
     } catch (error: any) {
       toast({
-        title: "Erro",
-        description: "Erro ao enviar mensagem. Tente novamente.",
+        title: t('contact.form.errorTitle'),
+        description: t('contact.form.errorSending'),
         variant: "destructive",
       });
     } finally {
@@ -105,7 +105,7 @@ const Contact = () => {
                 disabled={isSubmitting}
                 className="w-full bg-2b-orange hover:bg-orange-600 text-white h-12 text-lg font-medium"
               >
-                {isSubmitting ? 'Enviando...' : t('contact.form.submit')}
+                {isSubmitting ? t('contact.form.submitting') : t('contact.form.submit')}
               </Button>
             </form>
           </div>
