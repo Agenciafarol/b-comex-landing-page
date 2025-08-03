@@ -23,21 +23,29 @@ const Hero = () => {
         <div className="absolute top-1/2 right-1/4 w-32 h-32 bg-gradient-to-br from-2b-blue/10 to-2b-orange/10 rounded-full blur-2xl"></div>
       </div>
 
-      {/* Floating elements */}
-      <div className="absolute top-1/4 left-10 animate-pulse-grow">
+      {/* Floating elements - Hidden on mobile, repositioned on tablet+ */}
+      <div className="hidden md:block absolute top-1/4 left-10 animate-pulse-grow">
         <div className="w-12 h-12 bg-2b-blue/10 rounded-lg flex items-center justify-center">
           <Globe className="w-6 h-6 text-2b-blue" />
         </div>
       </div>
-      <div className="absolute top-1/3 right-10 animate-pulse-grow" style={{ animationDelay: '1s' }}>
+      <div className="hidden lg:block absolute top-1/3 right-10 animate-pulse-grow" style={{ animationDelay: '1s' }}>
         <div className="w-12 h-12 bg-2b-orange/10 rounded-lg flex items-center justify-center">
           <TrendingUp className="w-6 h-6 text-2b-orange" />
         </div>
       </div>
-      <div className="absolute bottom-1/4 left-1/4 animate-pulse-grow" style={{ animationDelay: '2s' }}>
+      <div className="hidden md:block absolute bottom-1/4 left-1/4 animate-pulse-grow" style={{ animationDelay: '2s' }}>
         <div className="w-12 h-12 bg-2b-blue/10 rounded-lg flex items-center justify-center">
           <Shield className="w-6 h-6 text-2b-blue" />
         </div>
+      </div>
+
+      {/* Mobile alternative - smaller decorative elements that don't interfere with text */}
+      <div className="md:hidden absolute top-20 right-4 opacity-30">
+        <div className="w-6 h-6 bg-2b-blue/20 rounded-full"></div>
+      </div>
+      <div className="md:hidden absolute bottom-32 left-4 opacity-30">
+        <div className="w-4 h-4 bg-2b-orange/20 rounded-full"></div>
       </div>
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
