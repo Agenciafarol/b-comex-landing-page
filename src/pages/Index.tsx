@@ -8,8 +8,6 @@ import MainServices from '../components/MainServices';
 import VideoSection from '../components/VideoSection';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
-import LanguageToggle from '../components/LanguageToggle';
-import FixedCTA from '../components/FixedCTA';
 
 const Index = () => {
   return (
@@ -22,8 +20,6 @@ const Index = () => {
       <VideoSection />
       <Contact />
       <Footer />
-      <LanguageToggle />
-      <FixedCTA />
     </div>
   );
 };
