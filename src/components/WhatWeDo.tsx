@@ -1,6 +1,7 @@
 
 import React from 'react';
-import { Container, Building2, Package } from 'lucide-react';
+import { Container, Building2, Package, Download } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useIsMobile } from '../hooks/use-mobile';
 
@@ -77,6 +78,24 @@ const WhatWeDo = () => {
               </div>
             </div>
           ))}
+        </div>
+        
+        {/* Download Button */}
+        <div className="flex justify-center mt-12">
+          <Button
+            asChild
+            className="bg-2b-orange hover:bg-orange-600 text-white font-semibold px-8 py-4 text-lg rounded-lg hover-scale group"
+          >
+            <a
+              href="https://bkjuogvqscismqvknnqw.supabase.co/storage/v1/object/public/documents//AF_Folder_Web_2B_Comex.pdf"
+              download
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Download className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+              {t('services.download')}
+            </a>
+          </Button>
         </div>
       </div>
     </section>

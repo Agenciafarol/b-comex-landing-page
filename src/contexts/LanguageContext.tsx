@@ -38,6 +38,7 @@ const translations = {
     'services.foreign.desc': 'Navegação completa pelas regulamentações locais',
     'services.import': 'Importação estratégica e segura',
     'services.import.desc': 'Processos otimizados e conformes com a legislação',
+    'services.download': 'Baixar Apresentação',
     
     // Por que escolher
     'why.title': 'Por que escolher a 2B COMEX',
@@ -147,6 +148,7 @@ const translations = {
     'services.foreign.desc': 'Complete navigation through local regulations',
     'services.import': 'Strategic and secure import',
     'services.import.desc': 'Optimized processes compliant with legislation',
+    'services.download': 'Download Presentation',
     
     // Por que escolher
     'why.title': 'Why choose 2B COMEX',
@@ -256,6 +258,7 @@ const translations = {
     'services.foreign.desc': 'Navegación completa por las regulaciones locales',
     'services.import': 'Importación estratégica y segura',
     'services.import.desc': 'Procesos optimizados y conformes con la legislación',
+    'services.download': 'Descargar Presentación',
     
     // Por que escolher
     'why.title': 'Por qué elegir 2B COMEX',
