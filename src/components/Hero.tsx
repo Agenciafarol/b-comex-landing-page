@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Globe, TrendingUp, Shield } from 'lucide-react';
+import { ArrowRight, Globe, TrendingUp } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const Hero = () => {
@@ -32,11 +32,6 @@ const Hero = () => {
       <div className="hidden lg:block absolute top-1/3 right-10 animate-pulse-grow" style={{ animationDelay: '1s' }}>
         <div className="w-12 h-12 bg-2b-orange/10 rounded-lg flex items-center justify-center">
           <TrendingUp className="w-6 h-6 text-2b-orange" />
-        </div>
-      </div>
-      <div className="hidden md:block absolute bottom-1/4 left-1/4 animate-pulse-grow" style={{ animationDelay: '2s' }}>
-        <div className="w-12 h-12 bg-2b-blue/10 rounded-lg flex items-center justify-center">
-          <Shield className="w-6 h-6 text-2b-blue" />
         </div>
       </div>
 
